@@ -21,11 +21,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/synergitech/sagephp.git"
+      "url": "https://github.com/synergitech/sage-php.git"
     }
   ],
   "require": {
-    "synergitech/sagephp": "*@dev"
+    "synergitech/sage-php": "*@dev"
   }
 }
 ```
