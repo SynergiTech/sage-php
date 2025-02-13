@@ -1,0 +1,52 @@
+# Contact
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**legacy_id** | **int** | The legacy ID for the item | [optional] 
+**id** | **string** | The unique identifier for the item | [optional] 
+**displayed_as** | **string** | The name of the resource | [optional] 
+**path** | **string** | The API path for the resource | [optional] 
+**created_at** | [**\DateTime**](\DateTime.md) | The datetime when the item was created | [optional] 
+**updated_at** | [**\DateTime**](\DateTime.md) | The datetime when the item was last updated | [optional] 
+**links** | [**\Swagger\Client\Model\Link[]**](Link.md) | Links for the resource | [optional] 
+**deleted_at** | [**\DateTime**](\DateTime.md) | The datetime when the item was deleted | [optional] 
+**balance** | **double** | The contact balance | [optional] 
+**contact_types** | [**\Swagger\Client\Model\Base[]**](Base.md) | The type of the contact. It has to be either CUSTOMER or VENDOR | [optional] 
+**name** | **string** | The contact&#39;s full name or business name | [optional] 
+**reference** | **string** | Unique reference for the contact | [optional] 
+**default_sales_ledger_account** | [**\Swagger\Client\Model\LedgerAccount**](LedgerAccount.md) | The default sales ledger account for the contact &lt;br&gt;&lt;i&gt;Customers only&lt;/i&gt; | [optional] 
+**default_sales_tax_rate** | [**\Swagger\Client\Model\Base**](Base.md) | The default sales tax rate for the contact &lt;br&gt;&lt;i&gt;Customers only&lt;/i&gt; | [optional] 
+**default_purchase_ledger_account** | [**\Swagger\Client\Model\LedgerAccount**](LedgerAccount.md) | The default purchase ledger account for the contact &lt;br&gt;&lt;i&gt;Vendors only&lt;/i&gt; | [optional] 
+**tax_number** | **string** | The VAT registration number of the contact. The format will be validated. | [optional] 
+**notes** | **string** | The notes for the contact | [optional] 
+**locale** | **string** | The locale for the contact | [optional] 
+**main_address** | [**\Swagger\Client\Model\Address**](Address.md) | The main address associated with the contact | [optional] 
+**delivery_address** | [**\Swagger\Client\Model\Address**](Address.md) | The delivery address &lt;br&gt;&lt;i&gt;Customers only&lt;/i&gt; | [optional] 
+**main_contact_person** | [**\Swagger\Client\Model\ContactPerson**](ContactPerson.md) | The main contact person of the contact. | [optional] 
+**bank_account_details** | [**\Swagger\Client\Model\BankAccountDetails**](BankAccountDetails.md) | The account details for the contact&#39;s bank account | [optional] 
+**credit_limit** | **double** | Custom credit limit amount for the contact &lt;br&gt;&lt;i&gt;not applicable to Start&lt;/i&gt; | [optional] 
+**credit_days** | **int** | Custom credit days for the contact.&lt;br&gt; If returned as null in a GET response, you may want to GET /invoice_settings and use &#39;customer_credit_days&#39;/&#39;vendor_credit_days&#39; as default/fallback according to your use case. | [optional] 
+**credit_terms_and_conditions** | **string** | Custom terms and conditions for the contact. If set will override global /invoice_settings default terms and conditions. &lt;br&gt;&lt;i&gt;Customers only&lt;/i&gt; | [optional] 
+**product_sales_price_type** | [**\Swagger\Client\Model\Base**](Base.md) | All default product_sales_price_type defaults. &lt;a   href&#x3D;\&quot;https://developer.sage.com/api/accounting/guides/inventory/#product-sales-prices--service-rates\&quot;   target&#x3D;\&quot;_blank\&quot;&gt;Learn more about sales price types &lt;/a&gt; &lt;br&gt;&lt;i&gt;Customers only, not applicable to Start&lt;i&gt; | [optional] 
+**source_guid** | **string** | Used when importing contacts from external sources | [optional] 
+**currency** | [**\Swagger\Client\Model\Base**](Base.md) | The currency that the contact trades in &lt;br&gt;&lt;i&gt;not applicable to Start&lt;/i&gt; | [optional] 
+**aux_reference** | **string** | Auxiliary reference. Used for German \&quot;Kreditorennummer\&quot; and \&quot;Debitorennummer\&quot;. &lt;br&gt; &lt;a href&#x3D;\&quot;https://developer.sage.com/accounting/reference/settings/#tag/Datev-Settings\&quot;&gt;   See Datev Settings endpoint reference &lt;/a&gt; | [optional] 
+**registered_number** | **string** | The registered number of the contact&#39;s business. Only used for German businesses and represents the \&quot;Steuernummer\&quot; there (not the \&quot;USt-ID\&quot;). | [optional] 
+**deletable** | **bool** | Indicates whether the contact can be deleted successfully | [optional] 
+**tax_treatment** | [**\Swagger\Client\Model\ContactTaxTreatment**](ContactTaxTreatment.md) | The tax treatment - indicates which tax rules to apply for a contact | [optional] 
+**email** | **string** | The email address for the given contact | [optional] 
+**tax_calculation** | **string** | &lt;b&gt;France:&lt;/b&gt; The tax calculation method used to define tax treatment &lt;i&gt;Vendors only&lt;/i&gt; &lt;br&gt; &lt;b&gt;Spain:&lt;/b&gt; Defines if contact is a retailer and tax is subject to Recargo de Equivalencia &lt;i&gt;Customers only&lt;/i&gt; &lt;b&gt;United Kingdom:&lt;/b&gt; Defines if contact tax treatment is domestic reverse charge &lt;i&gt;Customers &amp; Suppliers&lt;/i&gt; | [optional] 
+**auxiliary_account** | **string** | Auxiliary account - used when auxiliary accounting is enabled in business settings. &lt;br&gt;&lt;i&gt;Available only in Spain and France&lt;/i&gt; | [optional] 
+**gdpr_obfuscated** | **bool** | General Data Protection Regulation (GDPR) came into effect on 25th May 2018. It introduces new rules for how business owners manage their contacts&#39; personal data. When this field returns &#39;true&#39;, means that the contact has been requested to be obfuscated and you can not create any artifact (sales invoices, purchase invoices, ...) but you can still check previously created artifacts. | [optional] 
+**system** | **bool** | Identifies a contact as being a system contact used for processing specific transaction types and reserved specifically for those transaction types such as tax return payments/refunds. | [optional] 
+**has_unfinished_recurring_invoices** | **bool** | Indicates whether the contact is associated with any unfinished recurring invoices | [optional] 
+**cis_registered** | **bool** | Identifies a contact as being registered as CIS.&lt;br&gt;&lt;i&gt;only applicable to UK business&lt;/i&gt; | [optional] 
+**ni_based** | **bool** | Identifies a contact as being based in Northern Ireland. | [optional] 
+**gb_based** | **bool** | Identifies a contact as being based in Great Britain. | [optional] 
+**cis_settings** | [**\Swagger\Client\Model\ContactCisSettings**](ContactCisSettings.md) | The CIS Settings for the contact | [optional] 
+**destination_vat_blocking** | **bool** | Identifies a contact should be blocked due to destination vat | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
