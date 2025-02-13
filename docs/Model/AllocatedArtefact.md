@@ -1,13 +1,12 @@
-# AllocatedArtefact
+# # AllocatedArtefact
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacy_id** | **int** | The legacy ID for the item | [optional] 
-**id** | **string** | The unique identifier for the item | [optional] 
-**artefact** | [**\Swagger\Client\Model\Generic**](Generic.md) | The artefact the payment has been allocated against | [optional] 
-**amount** | **double** | The allocated amount | [optional] 
+**legacyId** | **int** | The legacy ID for the item | [optional]
+**id** | **string** | The unique identifier for the item | [optional]
+**artefact** | [**\SynergiTech\Sage\Model\Generic**](Generic.md) |  | [optional]
+**amount** | **float** | The allocated amount | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

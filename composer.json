@@ -1,36 +1,47 @@
 {
     "name": "synergitech/sage-php",
-    "description": "",
+    "version": "2024.09.03",
+    "description": "Documentation of the Sage Business Cloud Accounting API.",
     "keywords": [
-        "swagger",
+        "openapitools",
+        "openapi-generator",
+        "openapi",
         "php",
         "sdk",
+        "rest",
         "api"
     ],
-    "homepage": "http://swagger.io",
-    "license": "proprietary",
+    "homepage": "https://openapi-generator.tech",
+    "license": "unlicense",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "OpenAPI-Generator contributors",
+            "homepage": "https://openapi-generator.tech"
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^7.4.5",
+        "guzzlehttp/psr7": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~2.12"
+        "friendsofphp/php-cs-fixer": "^3.5",
+        "overtrue/phplint": "^9.0",
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-        "psr-4": { "SynergiTech\\SagePHP\\" : "lib/" }
+        "psr-4": { "SynergiTech\\Sage\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "SynergiTech\\SagePHP\\Test\\" : "test/" }
+        "psr-4": { "SynergiTech\\Sage\\Test\\" : "tests/" }
+    },
+    "scripts": {
+        "test": [
+            "@phplint"
+        ],
+        "phplint": "phplint"
     }
 }

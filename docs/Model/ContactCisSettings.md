@@ -1,12 +1,11 @@
-# ContactCisSettings
+# # ContactCisSettings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**registered_cis_name** | **string** | the CIS name for the Contact | [optional] 
-**subcontractor_verification_number** | **string** | The CIS Verification number for the contact | [optional] 
-**deduction_rate** | [**\Swagger\Client\Model\ContactCisDeductionRate**](ContactCisDeductionRate.md) | The CIS Deduction rate for the contact | [optional] 
+**registeredCisName** | **string** | the CIS name for the Contact | [optional]
+**subcontractorVerificationNumber** | **string** | The CIS Verification number for the contact | [optional]
+**deductionRate** | [**\SynergiTech\Sage\Model\ContactCisDeductionRate**](ContactCisDeductionRate.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,14 +1,13 @@
-# PostBankAccountsBankAccountBankAccountDetails
+# # PostBankAccountsBankAccountBankAccountDetails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_name** | **string** | The account name | 
-**account_number** | **string** | The account number | [optional] 
-**sort_code** | **string** | The sort code | [optional] 
-**bic** | **string** | The bic | [optional] 
-**iban** | **string** | The iban | [optional] 
+**accountName** | **string** | The account name |
+**accountNumber** | **string** | The account number | [optional]
+**sortCode** | **string** | The sort code | [optional]
+**bic** | **string** | The bic | [optional]
+**iban** | **string** | The iban | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

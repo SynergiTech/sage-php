@@ -1,10 +1,9 @@
-# PostBankTransfers
+# # PostBankTransfers
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bank_transfer** | [**\Swagger\Client\Model\PostBankTransfersBankTransfer**](PostBankTransfersBankTransfer.md) |  | 
+**bankTransfer** | [**\SynergiTech\Sage\Model\PostBankTransfersBankTransfer**](PostBankTransfersBankTransfer.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

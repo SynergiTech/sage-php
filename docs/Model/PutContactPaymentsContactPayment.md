@@ -1,27 +1,26 @@
-# PutContactPaymentsContactPayment
+# # PutContactPaymentsContactPayment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction_type_id** | **string** | The transaction type of the payment | [optional] 
-**contact_id** | **string** | The contact of the payment | [optional] 
-**bank_account_id** | **string** | The bank account of the payment | [optional] 
-**date** | [**\DateTime**](\DateTime.md) | The date the payment was made | [optional] 
-**total_amount** | **double** | The total amount of the payment | [optional] 
-**payment_method_id** | **string** | The ID of the Payment Method. | [optional] 
-**net_amount** | **double** | The net amount of the payment | [optional] 
-**tax_amount** | **double** | The tax amount of the payment | [optional] 
-**currency_id** | **string** | The ID of the Currency. | [optional] 
-**exchange_rate** | **double** | The exchange rate of the payment | [optional] 
-**base_currency_net_amount** | **double** | The net amount of the payment in base currency | [optional] 
-**base_currency_tax_amount** | **double** | The tax amount of the payment in base currency | [optional] 
-**base_currency_total_amount** | **double** | The total amount of the payment in base currency | [optional] 
-**base_currency_currency_charge** | **double** | The currency conversion charges in base currency | [optional] 
-**reference** | **string** | A reference for the payment | [optional] 
-**tax_rate_id** | **string** | The ID of the Tax Rate. | [optional] 
-**allocated_artefacts** | [**\Swagger\Client\Model\PostContactPaymentsContactPaymentAllocatedArtefacts[]**](PostContactPaymentsContactPaymentAllocatedArtefacts.md) |  | [optional] 
-**payment_on_account** | [**\Swagger\Client\Model\PostContactPaymentsContactPaymentPaymentOnAccount**](PostContactPaymentsContactPaymentPaymentOnAccount.md) |  | [optional] 
+**transactionTypeId** | **string** | The transaction type of the payment | [optional]
+**contactId** | **string** | The contact of the payment | [optional]
+**bankAccountId** | **string** | The bank account of the payment | [optional]
+**date** | **\DateTime** | The date the payment was made | [optional]
+**totalAmount** | **float** | The total amount of the payment | [optional]
+**paymentMethodId** | **string** | The ID of the Payment Method. | [optional]
+**netAmount** | **float** | The net amount of the payment | [optional]
+**taxAmount** | **float** | The tax amount of the payment | [optional]
+**currencyId** | **string** | The ID of the Currency. | [optional]
+**exchangeRate** | **float** | The exchange rate of the payment | [optional]
+**baseCurrencyNetAmount** | **float** | The net amount of the payment in base currency | [optional]
+**baseCurrencyTaxAmount** | **float** | The tax amount of the payment in base currency | [optional]
+**baseCurrencyTotalAmount** | **float** | The total amount of the payment in base currency | [optional]
+**baseCurrencyCurrencyCharge** | **float** | The currency conversion charges in base currency | [optional]
+**reference** | **string** | A reference for the payment | [optional]
+**taxRateId** | **string** | The ID of the Tax Rate. | [optional]
+**allocatedArtefacts** | [**\SynergiTech\Sage\Model\PostContactPaymentsContactPaymentAllocatedArtefactsInner[]**](PostContactPaymentsContactPaymentAllocatedArtefactsInner.md) |  | [optional]
+**paymentOnAccount** | [**\SynergiTech\Sage\Model\PostContactPaymentsContactPaymentPaymentOnAccount**](PostContactPaymentsContactPaymentPaymentOnAccount.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

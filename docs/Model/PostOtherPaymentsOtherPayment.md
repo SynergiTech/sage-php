@@ -1,27 +1,26 @@
-# PostOtherPaymentsOtherPayment
+# # PostOtherPaymentsOtherPayment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction_type_id** | **string** | The transaction type of the payment | 
-**date** | [**\DateTime**](\DateTime.md) | The date of the payment | 
-**total_amount** | **double** | The total amount of the payment | 
-**base_currency_total_itc_amount** | **double** | The total amount of input tax credit in base currency for the                      Other Payment (Canada only) | [optional] 
-**total_itc_amount** | **double** | The total amount of input tax credit for the Other Payment (Canada only) | [optional] 
-**base_currency_total_itr_amount** | **double** | The total amount of input tax refund in base currency for the                      Other Payment (Canada only) | [optional] 
-**total_itr_amount** | **double** | The total amount of input tax refund for the Other Payment (Canada only) | [optional] 
-**part_recoverable** | **bool** | Indicates if the Other Payment is part recoverable or not (Canada only) | [optional] 
-**payment_method_id** | **string** | The ID of the Payment Method. | [optional] 
-**contact_id** | **string** | The ID of the Contact. | [optional] 
-**bank_account_id** | **string** | The ID of the Bank Account. | [optional] 
-**tax_address_region_id** | **string** | The ID of the Tax Address Region. (Canada only) | [optional] 
-**net_amount** | **double** | The net amount of the payment | [optional] 
-**tax_amount** | **double** | The tax amount of the payment | [optional] 
-**reference** | **string** | A reference of the payment | [optional] 
-**withholding_tax_rate** | **double** | IRPF withheld tax rate | [optional] 
-**withholding_tax_amount** | **double** | IRPF withheld tax amount | [optional] 
-**payment_lines** | [**\Swagger\Client\Model\PostOtherPaymentsOtherPaymentPaymentLines[]**](PostOtherPaymentsOtherPaymentPaymentLines.md) | The payment lines of the payment | 
+**transactionTypeId** | **string** | The transaction type of the payment |
+**date** | **\DateTime** | The date of the payment |
+**totalAmount** | **float** | The total amount of the payment |
+**baseCurrencyTotalItcAmount** | **float** | The total amount of input tax credit in base currency for the                      Other Payment (Canada only) | [optional]
+**totalItcAmount** | **float** | The total amount of input tax credit for the Other Payment (Canada only) | [optional]
+**baseCurrencyTotalItrAmount** | **float** | The total amount of input tax refund in base currency for the                      Other Payment (Canada only) | [optional]
+**totalItrAmount** | **float** | The total amount of input tax refund for the Other Payment (Canada only) | [optional]
+**partRecoverable** | **bool** | Indicates if the Other Payment is part recoverable or not (Canada only) | [optional]
+**paymentMethodId** | **string** | The ID of the Payment Method. | [optional]
+**contactId** | **string** | The ID of the Contact. | [optional]
+**bankAccountId** | **string** | The ID of the Bank Account. | [optional]
+**taxAddressRegionId** | **string** | The ID of the Tax Address Region. (Canada only) | [optional]
+**netAmount** | **float** | The net amount of the payment | [optional]
+**taxAmount** | **float** | The tax amount of the payment | [optional]
+**reference** | **string** | A reference of the payment | [optional]
+**withholdingTaxRate** | **float** | IRPF withheld tax rate | [optional]
+**withholdingTaxAmount** | **float** | IRPF withheld tax amount | [optional]
+**paymentLines** | [**\SynergiTech\Sage\Model\PostOtherPaymentsOtherPaymentPaymentLinesInner[]**](PostOtherPaymentsOtherPaymentPaymentLinesInner.md) | The payment lines of the payment |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

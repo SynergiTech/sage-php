@@ -1,10 +1,9 @@
-# PutEmailSettings
+# # PutEmailSettings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email_settings** | [**\Swagger\Client\Model\PutEmailSettingsEmailSettings**](PutEmailSettingsEmailSettings.md) |  | 
+**emailSettings** | [**\SynergiTech\Sage\Model\PutEmailSettingsEmailSettings**](PutEmailSettingsEmailSettings.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

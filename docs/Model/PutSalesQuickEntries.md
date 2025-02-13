@@ -1,10 +1,9 @@
-# PutSalesQuickEntries
+# # PutSalesQuickEntries
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sales_quick_entry** | [**\Swagger\Client\Model\PutSalesQuickEntriesSalesQuickEntry**](PutSalesQuickEntriesSalesQuickEntry.md) |  | 
+**salesQuickEntry** | [**\SynergiTech\Sage\Model\PutSalesQuickEntriesSalesQuickEntry**](PutSalesQuickEntriesSalesQuickEntry.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

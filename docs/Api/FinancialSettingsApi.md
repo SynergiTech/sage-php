@@ -1,128 +1,143 @@
-# Swagger\Client\FinancialSettingsApi
+# SynergiTech\Sage\FinancialSettingsApi
 
-All URIs are relative to *https://api-qa.sageapim.com/uki/sageone/accounts/v3*
+All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getFinancialSettings**](FinancialSettingsApi.md#getFinancialSettings) | **GET** /financial_settings | Returns all Financial Settings
-[**putFinancialSettings**](FinancialSettingsApi.md#putFinancialSettings) | **PUT** /financial_settings | Updates a Financial Settings
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getFinancialSettings()**](FinancialSettingsApi.md#getFinancialSettings) | **GET** /financial_settings | Returns all Financial Settings |
+| [**putFinancialSettings()**](FinancialSettingsApi.md#putFinancialSettings) | **PUT** /financial_settings | Updates a Financial Settings |
 
 
-# **getFinancialSettings**
-> \Swagger\Client\Model\FinancialSettings getFinancialSettings($show_legacy_id)
+## `getFinancialSettings()`
+
+```php
+getFinancialSettings($showLegacyId): \SynergiTech\Sage\Model\FinancialSettings
+```
 
 Returns all Financial Settings
 
 ### Endpoint Availability  * Accounting Plus: 🇨🇦, 🇪🇸, 🇫🇷, 🇬🇧, 🇮🇪, 🇺🇸 * Accounting Standard: 🇬🇧, 🇮🇪 * Accounting Start: 🇨🇦, 🇪🇸, 🇫🇷, 🇬🇧, 🇮🇪, 🇺🇸  ### Access Control Restrictions  Requires the authenticated user to have any mentioned role in one of the listed areas: * Area: `Settings`: Full Access, Read Only
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKeyHeader
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\FinancialSettingsApi(
+// Configure API key authorization: apiKeyQuery
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+// Configure API key authorization: apiKeyHeader
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+
+$apiInstance = new SynergiTech\Sage\Api\FinancialSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$show_legacy_id = true; // bool | Display the legacy_id for the Financial Settings.
+$showLegacyId = True; // bool | Display the legacy_id for the Financial Settings.
 
 try {
-    $result = $apiInstance->getFinancialSettings($show_legacy_id);
+    $result = $apiInstance->getFinancialSettings($showLegacyId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialSettingsApi->getFinancialSettings: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **show_legacy_id** | **bool**| Display the legacy_id for the Financial Settings. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **showLegacyId** | **bool**| Display the legacy_id for the Financial Settings. | [optional] |
 
 ### Return type
 
-[**\Swagger\Client\Model\FinancialSettings**](../Model/FinancialSettings.md)
+[**\SynergiTech\Sage\Model\FinancialSettings**](../Model/FinancialSettings.md)
 
 ### Authorization
 
-[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **putFinancialSettings**
-> \Swagger\Client\Model\FinancialSettings putFinancialSettings($put_financial_settings)
+## `putFinancialSettings()`
+
+```php
+putFinancialSettings($putFinancialSettings): \SynergiTech\Sage\Model\FinancialSettings
+```
 
 Updates a Financial Settings
 
 ### Endpoint Availability  * Accounting Plus: 🇨🇦, 🇪🇸, 🇫🇷, 🇬🇧, 🇮🇪, 🇺🇸 * Accounting Standard: 🇬🇧, 🇮🇪 * Accounting Start: 🇨🇦, 🇪🇸, 🇫🇷, 🇬🇧, 🇮🇪, 🇺🇸  ### Access Control Restrictions  Requires the authenticated user to have any mentioned role in one of the listed areas: * Area: `Settings`: Full Access
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKeyHeader
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\FinancialSettingsApi(
+// Configure API key authorization: apiKeyQuery
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+// Configure API key authorization: apiKeyHeader
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+
+$apiInstance = new SynergiTech\Sage\Api\FinancialSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$put_financial_settings = new \Swagger\Client\Model\PutFinancialSettings(); // \Swagger\Client\Model\PutFinancialSettings | 
+$putFinancialSettings = new \SynergiTech\Sage\Model\PutFinancialSettings(); // \SynergiTech\Sage\Model\PutFinancialSettings
 
 try {
-    $result = $apiInstance->putFinancialSettings($put_financial_settings);
+    $result = $apiInstance->putFinancialSettings($putFinancialSettings);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialSettingsApi->putFinancialSettings: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **put_financial_settings** | [**\Swagger\Client\Model\PutFinancialSettings**](../Model/PutFinancialSettings.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putFinancialSettings** | [**\SynergiTech\Sage\Model\PutFinancialSettings**](../Model/PutFinancialSettings.md)|  | [optional] |
 
 ### Return type
 
-[**\Swagger\Client\Model\FinancialSettings**](../Model/FinancialSettings.md)
+[**\SynergiTech\Sage\Model\FinancialSettings**](../Model/FinancialSettings.md)
 
 ### Authorization
 
-[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

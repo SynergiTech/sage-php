@@ -1,140 +1,155 @@
-# Swagger\Client\TaxReturnFrequenciesApi
+# SynergiTech\Sage\TaxReturnFrequenciesApi
 
-All URIs are relative to *https://api-qa.sageapim.com/uki/sageone/accounts/v3*
+All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getTaxReturnFrequencies**](TaxReturnFrequenciesApi.md#getTaxReturnFrequencies) | **GET** /tax_return_frequencies | Returns all Tax Return Frequencies
-[**getTaxReturnFrequenciesKey**](TaxReturnFrequenciesApi.md#getTaxReturnFrequenciesKey) | **GET** /tax_return_frequencies/{key} | Returns a Tax Return Frequency
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getTaxReturnFrequencies()**](TaxReturnFrequenciesApi.md#getTaxReturnFrequencies) | **GET** /tax_return_frequencies | Returns all Tax Return Frequencies |
+| [**getTaxReturnFrequenciesKey()**](TaxReturnFrequenciesApi.md#getTaxReturnFrequenciesKey) | **GET** /tax_return_frequencies/{key} | Returns a Tax Return Frequency |
 
 
-# **getTaxReturnFrequencies**
-> \Swagger\Client\Model\BaseArray getTaxReturnFrequencies($tax_type_id, $show_legacy_id, $items_per_page, $page, $attributes)
+## `getTaxReturnFrequencies()`
+
+```php
+getTaxReturnFrequencies($taxTypeId, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\Base[]
+```
 
 Returns all Tax Return Frequencies
 
 ### Endpoint Availability  * Accounting Plus: 🇨🇦, 🇫🇷, 🇬🇧, 🇮🇪, 🇪🇸 * Accounting Standard: 🇨🇦, 🇫🇷, 🇬🇧, 🇮🇪, 🇪🇸 * Accounting Start: 🇨🇦, 🇫🇷, 🇬🇧, 🇮🇪, 🇪🇸
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKeyHeader
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\TaxReturnFrequenciesApi(
+// Configure API key authorization: apiKeyQuery
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+// Configure API key authorization: apiKeyHeader
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+
+$apiInstance = new SynergiTech\Sage\Api\TaxReturnFrequenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tax_type_id = "tax_type_id_example"; // string | Use this to filter Tax Submission Frequency Types by tax_type_id (Canada only)
-$show_legacy_id = true; // bool | Display the legacy_id for the Tax Submission Frequency Types.
-$items_per_page = 20; // int | Format - int32. Returns the given number of Tax Submission Frequency Types per request.
+$taxTypeId = 'taxTypeId_example'; // string | Use this to filter Tax Submission Frequency Types by tax_type_id (Canada only)
+$showLegacyId = True; // bool | Display the legacy_id for the Tax Submission Frequency Types.
+$itemsPerPage = 20; // int | Format - int32. Returns the given number of Tax Submission Frequency Types per request.
 $page = 1; // int | Format - int32. Go to specific page of Tax Submission Frequency Types
-$attributes = "attributes_example"; // string | Specify the attributes that you want to expose for the Tax Submission Frequency Types (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
+$attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Tax Submission Frequency Types (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getTaxReturnFrequencies($tax_type_id, $show_legacy_id, $items_per_page, $page, $attributes);
+    $result = $apiInstance->getTaxReturnFrequencies($taxTypeId, $showLegacyId, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxReturnFrequenciesApi->getTaxReturnFrequencies: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tax_type_id** | **string**| Use this to filter Tax Submission Frequency Types by tax_type_id (Canada only) | [optional]
- **show_legacy_id** | **bool**| Display the legacy_id for the Tax Submission Frequency Types. | [optional]
- **items_per_page** | **int**| Format - int32. Returns the given number of Tax Submission Frequency Types per request. | [optional] [default to 20]
- **page** | **int**| Format - int32. Go to specific page of Tax Submission Frequency Types | [optional] [default to 1]
- **attributes** | **string**| Specify the attributes that you want to expose for the Tax Submission Frequency Types (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **taxTypeId** | **string**| Use this to filter Tax Submission Frequency Types by tax_type_id (Canada only) | [optional] |
+| **showLegacyId** | **bool**| Display the legacy_id for the Tax Submission Frequency Types. | [optional] |
+| **itemsPerPage** | **int**| Format - int32. Returns the given number of Tax Submission Frequency Types per request. | [optional] [default to 20] |
+| **page** | **int**| Format - int32. Go to specific page of Tax Submission Frequency Types | [optional] [default to 1] |
+| **attributes** | **string**| Specify the attributes that you want to expose for the Tax Submission Frequency Types (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
 
-[**\Swagger\Client\Model\BaseArray**](../Model/BaseArray.md)
+[**\SynergiTech\Sage\Model\Base[]**](../Model/Base.md)
 
 ### Authorization
 
-[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getTaxReturnFrequenciesKey**
-> \Swagger\Client\Model\Base getTaxReturnFrequenciesKey($key, $show_legacy_id, $attributes)
+## `getTaxReturnFrequenciesKey()`
+
+```php
+getTaxReturnFrequenciesKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\Base
+```
 
 Returns a Tax Return Frequency
 
 ### Endpoint Availability  * Accounting Plus: 🇨🇦, 🇫🇷, 🇬🇧, 🇮🇪, 🇪🇸 * Accounting Standard: 🇨🇦, 🇫🇷, 🇬🇧, 🇮🇪, 🇪🇸 * Accounting Start: 🇨🇦, 🇫🇷, 🇬🇧, 🇮🇪, 🇪🇸
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKeyHeader
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\TaxReturnFrequenciesApi(
+// Configure API key authorization: apiKeyQuery
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+// Configure API key authorization: apiKeyHeader
+$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+
+$apiInstance = new SynergiTech\Sage\Api\TaxReturnFrequenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$key = "key_example"; // string | The Tax Return Frequency Key.
-$show_legacy_id = true; // bool | Display the legacy_id for the Tax Submission Frequency Type.
-$attributes = "attributes_example"; // string | Specify the attributes that you want to expose for the Tax Submission Frequency Type (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
+$key = 'key_example'; // string | The Tax Return Frequency Key.
+$showLegacyId = True; // bool | Display the legacy_id for the Tax Submission Frequency Type.
+$attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Tax Submission Frequency Type (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getTaxReturnFrequenciesKey($key, $show_legacy_id, $attributes);
+    $result = $apiInstance->getTaxReturnFrequenciesKey($key, $showLegacyId, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxReturnFrequenciesApi->getTaxReturnFrequenciesKey: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **string**| The Tax Return Frequency Key. |
- **show_legacy_id** | **bool**| Display the legacy_id for the Tax Submission Frequency Type. | [optional]
- **attributes** | **string**| Specify the attributes that you want to expose for the Tax Submission Frequency Type (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **string**| The Tax Return Frequency Key. | |
+| **showLegacyId** | **bool**| Display the legacy_id for the Tax Submission Frequency Type. | [optional] |
+| **attributes** | **string**| Specify the attributes that you want to expose for the Tax Submission Frequency Type (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
 
-[**\Swagger\Client\Model\Base**](../Model/Base.md)
+[**\SynergiTech\Sage\Model\Base**](../Model/Base.md)
 
 ### Authorization
 
-[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

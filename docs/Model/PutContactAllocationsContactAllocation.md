@@ -1,13 +1,12 @@
-# PutContactAllocationsContactAllocation
+# # PutContactAllocationsContactAllocation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction_type_id** | **string** | The transaction type of the allocation | [optional] 
-**contact_id** | **string** | The contact that the allocation relates to | [optional] 
-**date** | [**\DateTime**](\DateTime.md) | The date the allocation was made | [optional] 
-**allocated_artefacts** | [**\Swagger\Client\Model\PostContactAllocationsContactAllocationAllocatedArtefacts[]**](PostContactAllocationsContactAllocationAllocatedArtefacts.md) |  | [optional] 
+**transactionTypeId** | **string** | The transaction type of the allocation | [optional]
+**contactId** | **string** | The contact that the allocation relates to | [optional]
+**date** | **\DateTime** | The date the allocation was made | [optional]
+**allocatedArtefacts** | [**\SynergiTech\Sage\Model\PostContactAllocationsContactAllocationAllocatedArtefactsInner[]**](PostContactAllocationsContactAllocationAllocatedArtefactsInner.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,15 +1,14 @@
-# LedgerAccountBalanceDetails
+# # LedgerAccountBalanceDetails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **double** | The account balance | [optional] 
-**credit_or_debit** | **string** | Is the balance a debit or credit | [optional] 
-**credits** | **double** | The credit balance | [optional] 
-**debits** | **double** | The debit balance | [optional] 
-**from_date** | **string** | The from date filter | [optional] 
-**to_date** | **string** | The to date filter | [optional] 
+**balance** | **float** | The account balance | [optional]
+**creditOrDebit** | **string** | Is the balance a debit or credit | [optional]
+**credits** | **float** | The credit balance | [optional]
+**debits** | **float** | The debit balance | [optional]
+**fromDate** | **string** | The from date filter | [optional]
+**toDate** | **string** | The to date filter | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

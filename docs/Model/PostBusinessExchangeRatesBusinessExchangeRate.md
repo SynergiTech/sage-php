@@ -1,13 +1,12 @@
-# PostBusinessExchangeRatesBusinessExchangeRate
+# # PostBusinessExchangeRatesBusinessExchangeRate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency_id** | **string** | The foreign currency | 
-**rate** | **double** | The exchange rate | 
-**inverse_rate** | **double** | The inverse exchange rate | [optional] 
-**base_currency_id** | **string** | The ID of the Base Currency. | [optional] 
+**currencyId** | **string** | The foreign currency |
+**rate** | **float** | The exchange rate |
+**inverseRate** | **float** | The inverse exchange rate | [optional]
+**baseCurrencyId** | **string** | The ID of the Base Currency. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

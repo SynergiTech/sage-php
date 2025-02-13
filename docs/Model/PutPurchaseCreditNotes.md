@@ -1,10 +1,9 @@
-# PutPurchaseCreditNotes
+# # PutPurchaseCreditNotes
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**purchase_credit_note** | [**\Swagger\Client\Model\PutPurchaseCreditNotesPurchaseCreditNote**](PutPurchaseCreditNotesPurchaseCreditNote.md) |  | 
+**purchaseCreditNote** | [**\SynergiTech\Sage\Model\PutPurchaseCreditNotesPurchaseCreditNote**](PutPurchaseCreditNotesPurchaseCreditNote.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

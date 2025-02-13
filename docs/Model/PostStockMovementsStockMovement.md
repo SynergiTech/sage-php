@@ -1,16 +1,15 @@
-# PostStockMovementsStockMovement
+# # PostStockMovementsStockMovement
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**stock_item_id** | **string** | The stock item of the stock movement | 
-**date** | [**\DateTime**](\DateTime.md) | The date the stock movement occurred | 
-**quantity** | **double** | The quantity of the goods adjusted | 
-**cost_price** | **double** | The cost per unit of stock purchased | 
-**details** | **string** | The transaction details of the stock movement | 
-**movement_number** | **string** | The movement number of the stock movement | [optional] 
-**reference** | **string** | The reference of the stock movement | [optional] 
+**stockItemId** | **string** | The stock item of the stock movement |
+**date** | **\DateTime** | The date the stock movement occurred |
+**quantity** | **float** | The quantity of the goods adjusted |
+**costPrice** | **float** | The cost per unit of stock purchased |
+**details** | **string** | The transaction details of the stock movement |
+**movementNumber** | **string** | The movement number of the stock movement | [optional]
+**reference** | **string** | The reference of the stock movement | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

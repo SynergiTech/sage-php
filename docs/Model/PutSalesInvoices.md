@@ -1,10 +1,9 @@
-# PutSalesInvoices
+# # PutSalesInvoices
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sales_invoice** | [**\Swagger\Client\Model\PutSalesInvoicesSalesInvoice**](PutSalesInvoicesSalesInvoice.md) |  | 
+**salesInvoice** | [**\SynergiTech\Sage\Model\PutSalesInvoicesSalesInvoice**](PutSalesInvoicesSalesInvoice.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

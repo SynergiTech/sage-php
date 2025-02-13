@@ -1,24 +1,23 @@
-# OtherPaymentLineItem
+# # OtherPaymentLineItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacy_id** | **int** | The legacy ID for the item | [optional] 
-**id** | **string** | The unique identifier for the item | [optional] 
-**displayed_as** | **string** | The name of the resource | [optional] 
-**ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The ledger account of the payment line | [optional] 
-**details** | **string** | The details of the payment line | [optional] 
-**tax_rate** | [**\Swagger\Client\Model\Base**](Base.md) | The tax rate of the payment line | [optional] 
-**net_amount** | **double** | The net amount of the payment line | [optional] 
-**tax_amount** | **double** | The tax amount of the payment line | [optional] 
-**total_amount** | **double** | The total amount of the payment line | [optional] 
-**tax_breakdown** | [**\Swagger\Client\Model\TaxBreakdown[]**](TaxBreakdown.md) | The tax breakdown for the payment line | [optional] 
-**is_purchase_for_resale** | **bool** | Identifies whether the line item is for resale. (Ireland only) | [optional] 
-**trade_of_asset** | **bool** | Whether the line item is marked as trade of asset. | [optional] 
-**gst_amount** | **double** | The gst or hst tax amount for the other payment | [optional] 
-**pst_amount** | **double** | The pst or qst tax amount for the other payment | [optional] 
-**tax_recoverable** | **bool** | Indicates if the other payment is tax recoverable or not | [optional] 
+**legacyId** | **int** | The legacy ID for the item | [optional]
+**id** | **string** | The unique identifier for the item | [optional]
+**displayedAs** | **string** | The name of the resource | [optional]
+**ledgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**details** | **string** | The details of the payment line | [optional]
+**taxRate** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**netAmount** | **float** | The net amount of the payment line | [optional]
+**taxAmount** | **float** | The tax amount of the payment line | [optional]
+**totalAmount** | **float** | The total amount of the payment line | [optional]
+**taxBreakdown** | [**\SynergiTech\Sage\Model\TaxBreakdown[]**](TaxBreakdown.md) | The tax breakdown for the payment line | [optional]
+**isPurchaseForResale** | **bool** | Identifies whether the line item is for resale. (Ireland only) | [optional]
+**tradeOfAsset** | **bool** | Whether the line item is marked as trade of asset. | [optional]
+**gstAmount** | **float** | The gst or hst tax amount for the other payment | [optional]
+**pstAmount** | **float** | The pst or qst tax amount for the other payment | [optional]
+**taxRecoverable** | **bool** | Indicates if the other payment is tax recoverable or not | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

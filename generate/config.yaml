@@ -1,0 +1,9 @@
+additionalProperties:
+  artifactVersion: 2024.09.03
+  composerPackageName: synergitech/sage-php
+  developerOrganization: "Synergi Tech"
+  developerOrganizationUrl: https://synergi.tech
+  invokerPackage: SynergiTech\Sage
+  licenseName: MIT
+  packageName: Sage-PHP
+  variableNamingConvention: camelCase

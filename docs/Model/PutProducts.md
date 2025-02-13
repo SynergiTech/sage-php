@@ -1,10 +1,9 @@
-# PutProducts
+# # PutProducts
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**product** | [**\Swagger\Client\Model\PutProductsProduct**](PutProductsProduct.md) |  | 
+**product** | [**\SynergiTech\Sage\Model\PutProductsProduct**](PutProductsProduct.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

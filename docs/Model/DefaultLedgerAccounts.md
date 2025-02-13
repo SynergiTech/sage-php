@@ -1,28 +1,27 @@
-# DefaultLedgerAccounts
+# # DefaultLedgerAccounts
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bank_charges_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for bank charges | [optional] 
-**bank_interest_received_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for bank interest received | [optional] 
-**bank_interest_charges_paid_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for bank interest charges paid | [optional] 
-**exchange_rate_gains_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for exchange rate gains | [optional] 
-**exchange_rate_losses_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for exchange rate losses | [optional] 
-**sales_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for sales | [optional] 
-**sales_discount_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for sales discounts | [optional] 
-**purchase_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for purchases | [optional] 
-**purchase_discount_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for purchase discounts | [optional] 
-**product_sales_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default sales ledger account for products | [optional] 
-**product_purchase_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default purchase ledger account for products | [optional] 
-**service_sales_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default sales ledger account for services | [optional] 
-**service_purchase_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default purchase ledger account for services | [optional] 
-**stock_purchase_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default purchase ledger account for stock | [optional] 
-**other_receipt_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for other receipts | [optional] 
-**other_payment_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for other payments | [optional] 
-**customer_receipt_discount_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for customer receipt discounts | [optional] 
-**vendor_payment_discount_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for vendor payment discounts | [optional] 
-**carriage_ledger_account** | [**\Swagger\Client\Model\Base**](Base.md) | The default ledger account for carriage | [optional] 
+**bankChargesLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**bankInterestReceivedLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**bankInterestChargesPaidLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**exchangeRateGainsLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**exchangeRateLossesLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**salesLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**salesDiscountLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**purchaseLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**purchaseDiscountLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**productSalesLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**productPurchaseLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**serviceSalesLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**servicePurchaseLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**stockPurchaseLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**otherReceiptLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**otherPaymentLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**customerReceiptDiscountLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**vendorPaymentDiscountLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
+**carriageLedgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

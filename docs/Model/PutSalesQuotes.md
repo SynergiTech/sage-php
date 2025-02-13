@@ -1,10 +1,9 @@
-# PutSalesQuotes
+# # PutSalesQuotes
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sales_quote** | [**\Swagger\Client\Model\PutSalesQuotesSalesQuote**](PutSalesQuotesSalesQuote.md) |  | 
+**salesQuote** | [**\SynergiTech\Sage\Model\PutSalesQuotesSalesQuote**](PutSalesQuotesSalesQuote.md) |  |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

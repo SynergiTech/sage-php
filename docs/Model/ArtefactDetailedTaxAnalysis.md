@@ -1,21 +1,20 @@
-# ArtefactDetailedTaxAnalysis
+# # ArtefactDetailedTaxAnalysis
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tax_rates_breakdown** | [**\Swagger\Client\Model\ArtefactDetailedTaxAnalysisBreakdown**](ArtefactDetailedTaxAnalysisBreakdown.md) | The breakdown of tax rates and their totals | [optional] 
-**total_net** | **double** | The total net amount for all tax rates | [optional] 
-**total_tax** | **double** | The total tax amount for all tax rates | [optional] 
-**total** | **double** | The total amount for all tax rates | [optional] 
-**total_goods_amount** | **double** | The total amount relating to goods for all tax rates | [optional] 
-**total_services_amount** | **double** | The total amount relating to services for all tax rates | [optional] 
-**base_currency_total_net** | **double** | The base currency total net amount for all tax rates | [optional] 
-**base_currency_total_tax** | **double** | The base currency total tax amount for all tax rates | [optional] 
-**base_currency_total** | **double** | The total base currency amount for all tax rates | [optional] 
-**base_currency_total_goods_amount** | **double** | The total base currency amount relating to goods for all tax rates | [optional] 
-**base_currency_total_services_amount** | **double** | The total base currency amount relating to services for all tax rates | [optional] 
-**total_retailer_tax** | **double** | The total retailer tax amount for all tax rates | [optional] 
+**taxRatesBreakdown** | [**\SynergiTech\Sage\Model\ArtefactDetailedTaxAnalysisBreakdown**](ArtefactDetailedTaxAnalysisBreakdown.md) |  | [optional]
+**totalNet** | **float** | The total net amount for all tax rates | [optional]
+**totalTax** | **float** | The total tax amount for all tax rates | [optional]
+**total** | **float** | The total amount for all tax rates | [optional]
+**totalGoodsAmount** | **float** | The total amount relating to goods for all tax rates | [optional]
+**totalServicesAmount** | **float** | The total amount relating to services for all tax rates | [optional]
+**baseCurrencyTotalNet** | **float** | The base currency total net amount for all tax rates | [optional]
+**baseCurrencyTotalTax** | **float** | The base currency total tax amount for all tax rates | [optional]
+**baseCurrencyTotal** | **float** | The total base currency amount for all tax rates | [optional]
+**baseCurrencyTotalGoodsAmount** | **float** | The total base currency amount relating to goods for all tax rates | [optional]
+**baseCurrencyTotalServicesAmount** | **float** | The total base currency amount relating to services for all tax rates | [optional]
+**totalRetailerTax** | **float** | The total retailer tax amount for all tax rates | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
