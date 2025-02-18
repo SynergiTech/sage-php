@@ -28,5 +28,6 @@ Name | Type | Description | Notes
 **gstAmount** | **float** | The gst or hst tax amount for the purchase quick entry | [optional]
 **pstAmount** | **float** | The pst or qst tax amount for the purchase quick entry | [optional]
 **taxRecoverable** | **bool** | Indicates if the purchase quick entry is tax recoverable or not | [optional]
+**analysisTypeCategories** | [**\SynergiTech\Sage\Model\PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner[]**](PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

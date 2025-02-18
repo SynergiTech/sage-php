@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **description** | **string** | The description for the invoice line |
 **ledgerAccountId** | **string** | The ID of the Ledger Account. |
 **unitPrice** | **float** | The unit price for the invoice line |
+**analysisTypeCategories** | **string[]** | The analysis types information | [optional]
 **productId** | **string** | The ID of the Product. | [optional]
 **serviceId** | **string** | The ID of the Service. | [optional]
 **tradeOfAsset** | **bool** | Whether the line item is marked as trade of asset. | [optional]

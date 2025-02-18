@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unique identifier for the migration | [optional]
 **path** | **string** | The api path for this item | [optional]
 **status** | [**\SynergiTech\Sage\Model\MigrationStatus**](MigrationStatus.md) |  | [optional]

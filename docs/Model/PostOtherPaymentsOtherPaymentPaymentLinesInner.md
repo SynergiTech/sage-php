@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ledgerAccountId** | **string** | The ID of the Ledger Account. |
 **totalAmount** | **float** | The total amount of the payment line |
+**analysisTypeCategories** | **string[]** | The analysis types information | [optional]
 **details** | **string** | The details of the payment line | [optional]
 **taxRateId** | **string** | The ID of the Tax Rate. | [optional]
 **netAmount** | **float** | The net amount of the payment line | [optional]

@@ -1,6 +1,6 @@
 # SynergiTech\Sage\TaxTypesApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, ex
 ## `getTaxTypes()`
 
 ```php
-getTaxTypes($showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\TaxType[]
+getTaxTypes($itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\TaxType[]
 ```
 
 Returns all Tax Types
@@ -25,30 +25,18 @@ Returns all Tax Types
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\TaxTypesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$showLegacyId = True; // bool | Display the legacy_id for the Tax Types.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Tax Types per request.
-$page = 1; // int | Format - int32. Go to specific page of Tax Types
+$itemsPerPage = 20; // int | Returns the given number of Tax Types per request.
+$page = 1; // int | Go to specific page of Tax Types
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Tax Types (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getTaxTypes($showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getTaxTypes($itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxTypesApi->getTaxTypes: ', $e->getMessage(), PHP_EOL;
@@ -59,9 +47,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **showLegacyId** | **bool**| Display the legacy_id for the Tax Types. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Tax Types per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Tax Types | [optional] [default to 1] |
+| **itemsPerPage** | **int**| Returns the given number of Tax Types per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Tax Types | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Tax Types (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -70,7 +57,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -84,7 +71,7 @@ try {
 ## `getTaxTypesKey()`
 
 ```php
-getTaxTypesKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\TaxType
+getTaxTypesKey($key, $attributes): \SynergiTech\Sage\Model\TaxType
 ```
 
 Returns a Tax Type
@@ -98,29 +85,17 @@ Returns a Tax Type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\TaxTypesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Tax Type Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Tax Type.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Tax Type (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getTaxTypesKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getTaxTypesKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxTypesApi->getTaxTypesKey: ', $e->getMessage(), PHP_EOL;
@@ -132,7 +107,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Tax Type Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Tax Type. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Tax Type (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -141,7 +115,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

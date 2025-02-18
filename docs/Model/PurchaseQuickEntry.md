@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unique identifier for the item | [optional]
 **displayedAs** | **string** | The name of the resource | [optional]
 **path** | **string** | The API path for the resource | [optional]
@@ -13,11 +12,13 @@ Name | Type | Description | Notes
 **transaction** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **transactionType** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **deletedAt** | **\DateTime** | The datetime when the item was deleted | [optional]
+**analysisTypeCategories** | [**\SynergiTech\Sage\Model\AnalysisTypeLineItem[]**](AnalysisTypeLineItem.md) | The analysis types information | [optional]
 **quickEntryType** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **contactName** | **string** | The name of the contact when the quick entry was created | [optional]
 **contactReference** | **string** | The reference of the contact when the quick entry was created | [optional]
 **contact** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **date** | **\DateTime** | The date of the quick entry | [optional]
+**dueDate** | **\DateTime** | The due date of the quick entry | [optional]
 **reference** | **string** | The reference for the quick entry | [optional]
 **ledgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **details** | **string** | A description of the quick entry | [optional]

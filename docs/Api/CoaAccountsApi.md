@@ -1,6 +1,6 @@
 # SynergiTech\Sage\CoaAccountsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, ex
 ## `getCoaAccounts()`
 
 ```php
-getCoaAccounts($coaTemplateId, $updatedOrCreatedSince, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\CoaAccount[]
+getCoaAccounts($coaTemplateId, $updatedOrCreatedSince, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\CoaAccount[]
 ```
 
 Returns all Coa Accounts
@@ -25,32 +25,20 @@ Returns all Coa Accounts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\CoaAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $coaTemplateId = 'coaTemplateId_example'; // string | Use this to filter by COA Template
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Coa Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$showLegacyId = True; // bool | Display the legacy_id for the Coa Accounts.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Coa Accounts per request.
-$page = 1; // int | Format - int32. Go to specific page of Coa Accounts
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Coa Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$itemsPerPage = 20; // int | Returns the given number of Coa Accounts per request.
+$page = 1; // int | Go to specific page of Coa Accounts
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Coa Accounts (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getCoaAccounts($coaTemplateId, $updatedOrCreatedSince, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getCoaAccounts($coaTemplateId, $updatedOrCreatedSince, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CoaAccountsApi->getCoaAccounts: ', $e->getMessage(), PHP_EOL;
@@ -62,10 +50,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **coaTemplateId** | **string**| Use this to filter by COA Template | [optional] |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Coa Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Coa Accounts. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Coa Accounts per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Coa Accounts | [optional] [default to 1] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Coa Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **itemsPerPage** | **int**| Returns the given number of Coa Accounts per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Coa Accounts | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Coa Accounts (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -74,7 +61,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -88,7 +75,7 @@ try {
 ## `getCoaAccountsKey()`
 
 ```php
-getCoaAccountsKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\CoaAccount
+getCoaAccountsKey($key, $attributes): \SynergiTech\Sage\Model\CoaAccount
 ```
 
 Returns a Coa Account
@@ -102,29 +89,17 @@ Returns a Coa Account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\CoaAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Coa Account Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Coa Account.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Coa Account (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getCoaAccountsKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getCoaAccountsKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CoaAccountsApi->getCoaAccountsKey: ', $e->getMessage(), PHP_EOL;
@@ -136,7 +111,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Coa Account Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Coa Account. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Coa Account (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -145,7 +119,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

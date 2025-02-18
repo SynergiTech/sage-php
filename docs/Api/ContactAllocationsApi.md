@@ -1,6 +1,6 @@
 # SynergiTech\Sage\ContactAllocationsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Contact Allocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactAllocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Allocation Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getContactAllocations()`
 
 ```php
-getContactAllocations($contactId, $transactionTypeId, $updatedOrCreatedSince, $deletedSince, $showLegacyId, $itemsPerPage, $page, $attributes, $sort): \SynergiTech\Sage\Model\ContactAllocation[]
+getContactAllocations($contactId, $transactionTypeId, $updatedOrCreatedSince, $deletedSince, $itemsPerPage, $page, $attributes, $sort): \SynergiTech\Sage\Model\ContactAllocation[]
 ```
 
 Returns all Contact Allocations
@@ -94,35 +83,23 @@ Returns all Contact Allocations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactAllocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $contactId = 'contactId_example'; // string | Use this to filter by contact id
 $transactionTypeId = 'transactionTypeId_example'; // string | Use this to filter by transaction type id
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Allocations changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Allocations deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
-$showLegacyId = True; // bool | Display the legacy_id for the Allocations.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Allocations per request.
-$page = 1; // int | Format - int32. Go to specific page of Allocations
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Allocations changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Allocations deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
+$itemsPerPage = 20; // int | Returns the given number of Allocations per request.
+$page = 1; // int | Go to specific page of Allocations
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Allocations (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 $sort = 'sort_example'; // string | Order by a given attribute (required) and direction (optional; `asc` or `desc`; defaults to `asc`). Available attributes are: created_at, updated_at, date  Example: `sort=created_at` or `sort=created_at:desc`
 
 try {
-    $result = $apiInstance->getContactAllocations($contactId, $transactionTypeId, $updatedOrCreatedSince, $deletedSince, $showLegacyId, $itemsPerPage, $page, $attributes, $sort);
+    $result = $apiInstance->getContactAllocations($contactId, $transactionTypeId, $updatedOrCreatedSince, $deletedSince, $itemsPerPage, $page, $attributes, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactAllocationsApi->getContactAllocations: ', $e->getMessage(), PHP_EOL;
@@ -135,11 +112,10 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **string**| Use this to filter by contact id | [optional] |
 | **transactionTypeId** | **string**| Use this to filter by transaction type id | [optional] |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Allocations changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **deletedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Allocations deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Allocations. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Allocations per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Allocations | [optional] [default to 1] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Allocations changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **deletedSince** | **\DateTime**| Use this to limit the response to Allocations deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
+| **itemsPerPage** | **int**| Returns the given number of Allocations per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Allocations | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Allocations (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 | **sort** | **string**| Order by a given attribute (required) and direction (optional; &#x60;asc&#x60; or &#x60;desc&#x60;; defaults to &#x60;asc&#x60;). Available attributes are: created_at, updated_at, date  Example: &#x60;sort&#x3D;created_at&#x60; or &#x60;sort&#x3D;created_at:desc&#x60; | [optional] |
 
@@ -149,7 +125,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -163,7 +139,7 @@ try {
 ## `getContactAllocationsKey()`
 
 ```php
-getContactAllocationsKey($key, $attributes, $showLegacyId): \SynergiTech\Sage\Model\ContactAllocation
+getContactAllocationsKey($key, $attributes): \SynergiTech\Sage\Model\ContactAllocation
 ```
 
 Returns a Contact Allocation
@@ -177,29 +153,17 @@ Returns a Contact Allocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactAllocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Allocation Key.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Allocation (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
-$showLegacyId = True; // bool | Display the legacy_id for the Allocation.
 
 try {
-    $result = $apiInstance->getContactAllocationsKey($key, $attributes, $showLegacyId);
+    $result = $apiInstance->getContactAllocationsKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactAllocationsApi->getContactAllocationsKey: ', $e->getMessage(), PHP_EOL;
@@ -212,7 +176,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Contact Allocation Key. | |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Allocation (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Allocation. | [optional] |
 
 ### Return type
 
@@ -220,7 +183,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -234,7 +197,7 @@ try {
 ## `postContactAllocations()`
 
 ```php
-postContactAllocations($postContactAllocations): \SynergiTech\Sage\Model\ContactAllocation
+postContactAllocations($contactAllocations): \SynergiTech\Sage\Model\ContactAllocation
 ```
 
 Creates a Contact Allocation
@@ -248,27 +211,16 @@ Creates a Contact Allocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactAllocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postContactAllocations = new \SynergiTech\Sage\Model\PostContactAllocations(); // \SynergiTech\Sage\Model\PostContactAllocations
+$contactAllocations = new \SynergiTech\Sage\Model\PostContactAllocations(); // \SynergiTech\Sage\Model\PostContactAllocations
 
 try {
-    $result = $apiInstance->postContactAllocations($postContactAllocations);
+    $result = $apiInstance->postContactAllocations($contactAllocations);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactAllocationsApi->postContactAllocations: ', $e->getMessage(), PHP_EOL;
@@ -279,7 +231,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postContactAllocations** | [**\SynergiTech\Sage\Model\PostContactAllocations**](../Model/PostContactAllocations.md)|  | [optional] |
+| **contactAllocations** | [**\SynergiTech\Sage\Model\PostContactAllocations**](../Model/PostContactAllocations.md)|  | |
 
 ### Return type
 
@@ -287,7 +239,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -301,7 +253,7 @@ try {
 ## `putContactAllocationsKey()`
 
 ```php
-putContactAllocationsKey($key, $putContactAllocations): \SynergiTech\Sage\Model\ContactAllocation
+putContactAllocationsKey($key, $contactAllocations): \SynergiTech\Sage\Model\ContactAllocation
 ```
 
 Updates a Contact Allocation
@@ -315,28 +267,17 @@ Updates a Contact Allocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactAllocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Allocation Key.
-$putContactAllocations = new \SynergiTech\Sage\Model\PutContactAllocations(); // \SynergiTech\Sage\Model\PutContactAllocations
+$contactAllocations = new \SynergiTech\Sage\Model\PutContactAllocations(); // \SynergiTech\Sage\Model\PutContactAllocations
 
 try {
-    $result = $apiInstance->putContactAllocationsKey($key, $putContactAllocations);
+    $result = $apiInstance->putContactAllocationsKey($key, $contactAllocations);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactAllocationsApi->putContactAllocationsKey: ', $e->getMessage(), PHP_EOL;
@@ -348,7 +289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Contact Allocation Key. | |
-| **putContactAllocations** | [**\SynergiTech\Sage\Model\PutContactAllocations**](../Model/PutContactAllocations.md)|  | [optional] |
+| **contactAllocations** | [**\SynergiTech\Sage\Model\PutContactAllocations**](../Model/PutContactAllocations.md)|  | |
 
 ### Return type
 
@@ -356,7 +297,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

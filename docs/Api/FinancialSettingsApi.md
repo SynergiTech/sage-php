@@ -1,6 +1,6 @@
 # SynergiTech\Sage\FinancialSettingsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, ex
 ## `getFinancialSettings()`
 
 ```php
-getFinancialSettings($showLegacyId): \SynergiTech\Sage\Model\FinancialSettings
+getFinancialSettings(): \SynergiTech\Sage\Model\FinancialSettings
 ```
 
 Returns all Financial Settings
@@ -25,27 +25,15 @@ Returns all Financial Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\FinancialSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$showLegacyId = True; // bool | Display the legacy_id for the Financial Settings.
 
 try {
-    $result = $apiInstance->getFinancialSettings($showLegacyId);
+    $result = $apiInstance->getFinancialSettings();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialSettingsApi->getFinancialSettings: ', $e->getMessage(), PHP_EOL;
@@ -54,9 +42,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **showLegacyId** | **bool**| Display the legacy_id for the Financial Settings. | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -64,7 +50,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -78,7 +64,7 @@ try {
 ## `putFinancialSettings()`
 
 ```php
-putFinancialSettings($putFinancialSettings): \SynergiTech\Sage\Model\FinancialSettings
+putFinancialSettings($financialSettings): \SynergiTech\Sage\Model\FinancialSettings
 ```
 
 Updates a Financial Settings
@@ -92,27 +78,16 @@ Updates a Financial Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\FinancialSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$putFinancialSettings = new \SynergiTech\Sage\Model\PutFinancialSettings(); // \SynergiTech\Sage\Model\PutFinancialSettings
+$financialSettings = new \SynergiTech\Sage\Model\PutFinancialSettings(); // \SynergiTech\Sage\Model\PutFinancialSettings
 
 try {
-    $result = $apiInstance->putFinancialSettings($putFinancialSettings);
+    $result = $apiInstance->putFinancialSettings($financialSettings);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialSettingsApi->putFinancialSettings: ', $e->getMessage(), PHP_EOL;
@@ -123,7 +98,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **putFinancialSettings** | [**\SynergiTech\Sage\Model\PutFinancialSettings**](../Model/PutFinancialSettings.md)|  | [optional] |
+| **financialSettings** | [**\SynergiTech\Sage\Model\PutFinancialSettings**](../Model/PutFinancialSettings.md)|  | |
 
 ### Return type
 
@@ -131,7 +106,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

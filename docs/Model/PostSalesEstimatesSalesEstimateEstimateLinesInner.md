@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ledgerAccountId** | **string** | The ID of the Ledger Account. |
 **quantity** | **float** | The quantity for the quote line |
 **unitPrice** | **float** | The unit price for the quote line |
+**analysisTypeCategories** | **string[]** | The analysis types information | [optional]
 **productId** | **string** | The ID of the Product. | [optional]
 **serviceId** | **string** | The ID of the Service. | [optional]
 **tradeOfAsset** | **bool** | Whether the line item is marked as trade of asset. | [optional]

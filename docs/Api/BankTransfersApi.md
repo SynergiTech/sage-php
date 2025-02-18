@@ -1,6 +1,6 @@
 # SynergiTech\Sage\BankTransfersApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Bank Transfer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankTransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Bank Transfer Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getBankTransfers()`
 
 ```php
-getBankTransfers($updatedOrCreatedSince, $deletedSince, $fromDate, $toDate, $showLegacyId, $itemsPerPage, $page, $attributes, $sort): \SynergiTech\Sage\Model\BankTransfer[]
+getBankTransfers($updatedOrCreatedSince, $deletedSince, $fromDate, $toDate, $itemsPerPage, $page, $attributes, $sort): \SynergiTech\Sage\Model\BankTransfer[]
 ```
 
 Returns all Bank Transfers
@@ -94,35 +83,23 @@ Returns all Bank Transfers
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankTransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Transfers changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Transfers deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
-$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to filter by Bank Transfers dates
-$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to filter by Bank Transfers dates
-$showLegacyId = True; // bool | Display the legacy_id for the Bank Transfers.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Bank Transfers per request.
-$page = 1; // int | Format - int32. Go to specific page of Bank Transfers
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Bank Transfers changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Bank Transfers deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to filter by Bank Transfers dates
+$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to filter by Bank Transfers dates
+$itemsPerPage = 20; // int | Returns the given number of Bank Transfers per request.
+$page = 1; // int | Go to specific page of Bank Transfers
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Bank Transfers (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 $sort = 'sort_example'; // string | Order by a given attribute (required) and direction (optional; `asc` or `desc`; defaults to `asc`). Available attributes are: created_at, updated_at, date  Example: `sort=created_at` or `sort=created_at:desc`
 
 try {
-    $result = $apiInstance->getBankTransfers($updatedOrCreatedSince, $deletedSince, $fromDate, $toDate, $showLegacyId, $itemsPerPage, $page, $attributes, $sort);
+    $result = $apiInstance->getBankTransfers($updatedOrCreatedSince, $deletedSince, $fromDate, $toDate, $itemsPerPage, $page, $attributes, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankTransfersApi->getBankTransfers: ', $e->getMessage(), PHP_EOL;
@@ -133,13 +110,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Transfers changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **deletedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Transfers deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
-| **fromDate** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to filter by Bank Transfers dates | [optional] |
-| **toDate** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to filter by Bank Transfers dates | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Bank Transfers. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Bank Transfers per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Bank Transfers | [optional] [default to 1] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Bank Transfers changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **deletedSince** | **\DateTime**| Use this to limit the response to Bank Transfers deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
+| **fromDate** | **\DateTime**| Use this to filter by Bank Transfers dates | [optional] |
+| **toDate** | **\DateTime**| Use this to filter by Bank Transfers dates | [optional] |
+| **itemsPerPage** | **int**| Returns the given number of Bank Transfers per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Bank Transfers | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Bank Transfers (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 | **sort** | **string**| Order by a given attribute (required) and direction (optional; &#x60;asc&#x60; or &#x60;desc&#x60;; defaults to &#x60;asc&#x60;). Available attributes are: created_at, updated_at, date  Example: &#x60;sort&#x3D;created_at&#x60; or &#x60;sort&#x3D;created_at:desc&#x60; | [optional] |
 
@@ -149,7 +125,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -163,7 +139,7 @@ try {
 ## `getBankTransfersKey()`
 
 ```php
-getBankTransfersKey($key, $nestedAttributes, $showLegacyId, $attributes): \SynergiTech\Sage\Model\BankTransfer
+getBankTransfersKey($key, $nestedAttributes, $attributes): \SynergiTech\Sage\Model\BankTransfer
 ```
 
 Returns a Bank Transfer
@@ -177,30 +153,18 @@ Returns a Bank Transfer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankTransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Bank Transfer Key.
 $nestedAttributes = 'nestedAttributes_example'; // string | Specify the attributes that you want to expose for nested entities of the Bank Transfer (expose all nested attributes with 'all'). These are in addition to the base attributes (name, path)
-$showLegacyId = True; // bool | Display the legacy_id for the Bank Transfer.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Bank Transfer (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getBankTransfersKey($key, $nestedAttributes, $showLegacyId, $attributes);
+    $result = $apiInstance->getBankTransfersKey($key, $nestedAttributes, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankTransfersApi->getBankTransfersKey: ', $e->getMessage(), PHP_EOL;
@@ -213,7 +177,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Bank Transfer Key. | |
 | **nestedAttributes** | **string**| Specify the attributes that you want to expose for nested entities of the Bank Transfer (expose all nested attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Bank Transfer. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Bank Transfer (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -222,7 +185,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -236,7 +199,7 @@ try {
 ## `postBankTransfers()`
 
 ```php
-postBankTransfers($postBankTransfers): \SynergiTech\Sage\Model\BankTransfer
+postBankTransfers($bankTransfers): \SynergiTech\Sage\Model\BankTransfer
 ```
 
 Creates a Bank Transfer
@@ -250,27 +213,16 @@ Creates a Bank Transfer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankTransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postBankTransfers = new \SynergiTech\Sage\Model\PostBankTransfers(); // \SynergiTech\Sage\Model\PostBankTransfers
+$bankTransfers = new \SynergiTech\Sage\Model\PostBankTransfers(); // \SynergiTech\Sage\Model\PostBankTransfers
 
 try {
-    $result = $apiInstance->postBankTransfers($postBankTransfers);
+    $result = $apiInstance->postBankTransfers($bankTransfers);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankTransfersApi->postBankTransfers: ', $e->getMessage(), PHP_EOL;
@@ -281,7 +233,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postBankTransfers** | [**\SynergiTech\Sage\Model\PostBankTransfers**](../Model/PostBankTransfers.md)|  | [optional] |
+| **bankTransfers** | [**\SynergiTech\Sage\Model\PostBankTransfers**](../Model/PostBankTransfers.md)|  | |
 
 ### Return type
 
@@ -289,7 +241,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -303,7 +255,7 @@ try {
 ## `putBankTransfersKey()`
 
 ```php
-putBankTransfersKey($key, $putBankTransfers): \SynergiTech\Sage\Model\BankTransfer
+putBankTransfersKey($key, $bankTransfers): \SynergiTech\Sage\Model\BankTransfer
 ```
 
 Updates a Bank Transfer
@@ -317,28 +269,17 @@ Updates a Bank Transfer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankTransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Bank Transfer Key.
-$putBankTransfers = new \SynergiTech\Sage\Model\PutBankTransfers(); // \SynergiTech\Sage\Model\PutBankTransfers
+$bankTransfers = new \SynergiTech\Sage\Model\PutBankTransfers(); // \SynergiTech\Sage\Model\PutBankTransfers
 
 try {
-    $result = $apiInstance->putBankTransfersKey($key, $putBankTransfers);
+    $result = $apiInstance->putBankTransfersKey($key, $bankTransfers);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankTransfersApi->putBankTransfersKey: ', $e->getMessage(), PHP_EOL;
@@ -350,7 +291,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Bank Transfer Key. | |
-| **putBankTransfers** | [**\SynergiTech\Sage\Model\PutBankTransfers**](../Model/PutBankTransfers.md)|  | [optional] |
+| **bankTransfers** | [**\SynergiTech\Sage\Model\PutBankTransfers**](../Model/PutBankTransfers.md)|  | |
 
 ### Return type
 
@@ -358,7 +299,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

@@ -1,12 +1,13 @@
 # SynergiTech\Sage\BankAccountsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**deleteBankAccountsKey()**](BankAccountsApi.md#deleteBankAccountsKey) | **DELETE** /bank_accounts/{key} | Deletes a Bank Account |
 | [**getBankAccounts()**](BankAccountsApi.md#getBankAccounts) | **GET** /bank_accounts | Returns all Bank Accounts |
 | [**getBankAccountsKey()**](BankAccountsApi.md#getBankAccountsKey) | **GET** /bank_accounts/{key} | Returns a Bank Account |
+| [**getBankAccountsKeyBankFeed()**](BankAccountsApi.md#getBankAccountsKeyBankFeed) | **GET** /bank_accounts/{key}/bank_feed | Bank feed endpoint for Banking Cloud Bank accounts |
 | [**postBankAccounts()**](BankAccountsApi.md#postBankAccounts) | **POST** /bank_accounts | Creates a Bank Account |
 | [**putBankAccountsKey()**](BankAccountsApi.md#putBankAccountsKey) | **PUT** /bank_accounts/{key} | Updates a Bank Account |
 
@@ -28,22 +29,11 @@ Deletes a Bank Account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Bank Account Key.
 
@@ -66,7 +56,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +70,7 @@ void (empty response body)
 ## `getBankAccounts()`
 
 ```php
-getBankAccounts($updatedOrCreatedSince, $deletedSince, $nestedAttributes, $excludeStripe, $filterInactiveBankAccounts, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\BankAccount[]
+getBankAccounts($updatedOrCreatedSince, $deletedSince, $nestedAttributes, $excludeStripe, $filterInactiveBankAccounts, $appName, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\BankAccount[]
 ```
 
 Returns all Bank Accounts
@@ -94,35 +84,24 @@ Returns all Bank Accounts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Accounts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Bank Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Bank Accounts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
 $nestedAttributes = 'nestedAttributes_example'; // string | Specify the attributes that you want to expose for nested entities of the Bank Accounts (expose all nested attributes with 'all'). These are in addition to the base attributes (name, path)
 $excludeStripe = True; // bool | Use this to filter out Stripe Bank Accounts
 $filterInactiveBankAccounts = True; // bool | Use this to filter inactive bank accounts
-$showLegacyId = True; // bool | Display the legacy_id for the Bank Accounts.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Bank Accounts per request.
-$page = 1; // int | Format - int32. Go to specific page of Bank Accounts
+$appName = 'appName_example'; // string | The App Name
+$itemsPerPage = 20; // int | Returns the given number of Bank Accounts per request.
+$page = 1; // int | Go to specific page of Bank Accounts
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Bank Accounts (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getBankAccounts($updatedOrCreatedSince, $deletedSince, $nestedAttributes, $excludeStripe, $filterInactiveBankAccounts, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getBankAccounts($updatedOrCreatedSince, $deletedSince, $nestedAttributes, $excludeStripe, $filterInactiveBankAccounts, $appName, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->getBankAccounts: ', $e->getMessage(), PHP_EOL;
@@ -133,14 +112,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **deletedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Bank Accounts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Bank Accounts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **deletedSince** | **\DateTime**| Use this to limit the response to Bank Accounts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
 | **nestedAttributes** | **string**| Specify the attributes that you want to expose for nested entities of the Bank Accounts (expose all nested attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 | **excludeStripe** | **bool**| Use this to filter out Stripe Bank Accounts | [optional] |
 | **filterInactiveBankAccounts** | **bool**| Use this to filter inactive bank accounts | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Bank Accounts. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Bank Accounts per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Bank Accounts | [optional] [default to 1] |
+| **appName** | **string**| The App Name | [optional] |
+| **itemsPerPage** | **int**| Returns the given number of Bank Accounts per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Bank Accounts | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Bank Accounts (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -149,7 +128,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -163,7 +142,7 @@ try {
 ## `getBankAccountsKey()`
 
 ```php
-getBankAccountsKey($key, $nestedAttributes, $showLegacyId, $attributes): \SynergiTech\Sage\Model\BankAccount
+getBankAccountsKey($key, $nestedAttributes, $attributes): \SynergiTech\Sage\Model\BankAccount
 ```
 
 Returns a Bank Account
@@ -177,30 +156,18 @@ Returns a Bank Account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Bank Account Key.
 $nestedAttributes = 'nestedAttributes_example'; // string | Specify the attributes that you want to expose for nested entities of the Bank Account (expose all nested attributes with 'all'). These are in addition to the base attributes (name, path)
-$showLegacyId = True; // bool | Display the legacy_id for the Bank Account.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Bank Account (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getBankAccountsKey($key, $nestedAttributes, $showLegacyId, $attributes);
+    $result = $apiInstance->getBankAccountsKey($key, $nestedAttributes, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->getBankAccountsKey: ', $e->getMessage(), PHP_EOL;
@@ -213,7 +180,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Bank Account Key. | |
 | **nestedAttributes** | **string**| Specify the attributes that you want to expose for nested entities of the Bank Account (expose all nested attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Bank Account. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Bank Account (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -222,7 +188,63 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getBankAccountsKeyBankFeed()`
+
+```php
+getBankAccountsKeyBankFeed($key): \SynergiTech\Sage\Model\Base
+```
+
+Bank feed endpoint for Banking Cloud Bank accounts
+
+### Endpoint Availability  * Accounting Plus: 🇨🇦, 🇪🇸, 🇫🇷, 🇬🇧, 🇮🇪, 🇺🇸 * Accounting Standard: 🇬🇧, 🇮🇪 * Accounting Start: 🇨🇦, 🇪🇸, 🇫🇷, 🇬🇧, 🇮🇪, 🇺🇸  ### Access Control Restrictions  Requires the authenticated user to have any of the following roles in the area `Bank`: Full Access, Read Only, Restricted Access
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new SynergiTech\Sage\Api\BankAccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$key = 'key_example'; // string | The Bank Account GUID.
+
+try {
+    $result = $apiInstance->getBankAccountsKeyBankFeed($key);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BankAccountsApi->getBankAccountsKeyBankFeed: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **string**| The Bank Account GUID. | |
+
+### Return type
+
+[**\SynergiTech\Sage\Model\Base**](../Model/Base.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -236,7 +258,7 @@ try {
 ## `postBankAccounts()`
 
 ```php
-postBankAccounts($postBankAccounts): \SynergiTech\Sage\Model\BankAccount
+postBankAccounts($bankAccounts): \SynergiTech\Sage\Model\BankAccount
 ```
 
 Creates a Bank Account
@@ -250,27 +272,16 @@ Creates a Bank Account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postBankAccounts = new \SynergiTech\Sage\Model\PostBankAccounts(); // \SynergiTech\Sage\Model\PostBankAccounts
+$bankAccounts = new \SynergiTech\Sage\Model\PostBankAccounts(); // \SynergiTech\Sage\Model\PostBankAccounts
 
 try {
-    $result = $apiInstance->postBankAccounts($postBankAccounts);
+    $result = $apiInstance->postBankAccounts($bankAccounts);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->postBankAccounts: ', $e->getMessage(), PHP_EOL;
@@ -281,7 +292,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postBankAccounts** | [**\SynergiTech\Sage\Model\PostBankAccounts**](../Model/PostBankAccounts.md)|  | [optional] |
+| **bankAccounts** | [**\SynergiTech\Sage\Model\PostBankAccounts**](../Model/PostBankAccounts.md)|  | |
 
 ### Return type
 
@@ -289,7 +300,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -303,7 +314,7 @@ try {
 ## `putBankAccountsKey()`
 
 ```php
-putBankAccountsKey($key, $putBankAccounts): \SynergiTech\Sage\Model\BankAccount
+putBankAccountsKey($key, $bankAccounts): \SynergiTech\Sage\Model\BankAccount
 ```
 
 Updates a Bank Account
@@ -317,28 +328,17 @@ Updates a Bank Account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\BankAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Bank Account Key.
-$putBankAccounts = new \SynergiTech\Sage\Model\PutBankAccounts(); // \SynergiTech\Sage\Model\PutBankAccounts
+$bankAccounts = new \SynergiTech\Sage\Model\PutBankAccounts(); // \SynergiTech\Sage\Model\PutBankAccounts
 
 try {
-    $result = $apiInstance->putBankAccountsKey($key, $putBankAccounts);
+    $result = $apiInstance->putBankAccountsKey($key, $bankAccounts);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->putBankAccountsKey: ', $e->getMessage(), PHP_EOL;
@@ -350,7 +350,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Bank Account Key. | |
-| **putBankAccounts** | [**\SynergiTech\Sage\Model\PutBankAccounts**](../Model/PutBankAccounts.md)|  | [optional] |
+| **bankAccounts** | [**\SynergiTech\Sage\Model\PutBankAccounts**](../Model/PutBankAccounts.md)|  | |
 
 ### Return type
 
@@ -358,7 +358,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

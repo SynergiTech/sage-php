@@ -1,6 +1,6 @@
 # SynergiTech\Sage\HostedArtefactPaymentSettingsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -27,22 +27,11 @@ Deletes a Hosted Artefact Payment Setting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\HostedArtefactPaymentSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Hosted Artefact Payment Setting Key.
 
@@ -65,7 +54,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -79,7 +68,7 @@ void (empty response body)
 ## `getHostedArtefactPaymentSettings()`
 
 ```php
-getHostedArtefactPaymentSettings($objectGuid, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\HostedArtefactPaymentSetting[]
+getHostedArtefactPaymentSettings($objectGuid, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\HostedArtefactPaymentSetting[]
 ```
 
 Returns all Hosted Artefact Payment Settings
@@ -93,31 +82,19 @@ Returns all Hosted Artefact Payment Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\HostedArtefactPaymentSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $objectGuid = 'objectGuid_example'; // string | Use this to filter out hosted artefact payment settings by the guid of the object it is associated to.
-$showLegacyId = True; // bool | Display the legacy_id for the Hosted Artefact Payment Settings.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Hosted Artefact Payment Settings per request.
-$page = 1; // int | Format - int32. Go to specific page of Hosted Artefact Payment Settings
+$itemsPerPage = 20; // int | Returns the given number of Hosted Artefact Payment Settings per request.
+$page = 1; // int | Go to specific page of Hosted Artefact Payment Settings
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Hosted Artefact Payment Settings (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getHostedArtefactPaymentSettings($objectGuid, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getHostedArtefactPaymentSettings($objectGuid, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HostedArtefactPaymentSettingsApi->getHostedArtefactPaymentSettings: ', $e->getMessage(), PHP_EOL;
@@ -129,9 +106,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **objectGuid** | **string**| Use this to filter out hosted artefact payment settings by the guid of the object it is associated to. | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Hosted Artefact Payment Settings. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Hosted Artefact Payment Settings per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Hosted Artefact Payment Settings | [optional] [default to 1] |
+| **itemsPerPage** | **int**| Returns the given number of Hosted Artefact Payment Settings per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Hosted Artefact Payment Settings | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Hosted Artefact Payment Settings (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -140,7 +116,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -154,7 +130,7 @@ try {
 ## `getHostedArtefactPaymentSettingsKey()`
 
 ```php
-getHostedArtefactPaymentSettingsKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\HostedArtefactPaymentSetting
+getHostedArtefactPaymentSettingsKey($key, $attributes): \SynergiTech\Sage\Model\HostedArtefactPaymentSetting
 ```
 
 Returns a Hosted Artefact Payment Setting
@@ -168,29 +144,17 @@ Returns a Hosted Artefact Payment Setting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\HostedArtefactPaymentSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Hosted Artefact Payment Setting Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Hosted Artefact Payment Setting.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Hosted Artefact Payment Setting (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getHostedArtefactPaymentSettingsKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getHostedArtefactPaymentSettingsKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HostedArtefactPaymentSettingsApi->getHostedArtefactPaymentSettingsKey: ', $e->getMessage(), PHP_EOL;
@@ -202,7 +166,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Hosted Artefact Payment Setting Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Hosted Artefact Payment Setting. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Hosted Artefact Payment Setting (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -211,7 +174,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -225,7 +188,7 @@ try {
 ## `postHostedArtefactPaymentSettings()`
 
 ```php
-postHostedArtefactPaymentSettings($postHostedArtefactPaymentSettings): \SynergiTech\Sage\Model\HostedArtefactPaymentSetting
+postHostedArtefactPaymentSettings($hostedArtefactPaymentSettings): \SynergiTech\Sage\Model\HostedArtefactPaymentSetting
 ```
 
 Creates a Hosted Artefact Payment Setting
@@ -239,27 +202,16 @@ Creates a Hosted Artefact Payment Setting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\HostedArtefactPaymentSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postHostedArtefactPaymentSettings = new \SynergiTech\Sage\Model\PostHostedArtefactPaymentSettings(); // \SynergiTech\Sage\Model\PostHostedArtefactPaymentSettings
+$hostedArtefactPaymentSettings = new \SynergiTech\Sage\Model\PostHostedArtefactPaymentSettings(); // \SynergiTech\Sage\Model\PostHostedArtefactPaymentSettings
 
 try {
-    $result = $apiInstance->postHostedArtefactPaymentSettings($postHostedArtefactPaymentSettings);
+    $result = $apiInstance->postHostedArtefactPaymentSettings($hostedArtefactPaymentSettings);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HostedArtefactPaymentSettingsApi->postHostedArtefactPaymentSettings: ', $e->getMessage(), PHP_EOL;
@@ -270,7 +222,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postHostedArtefactPaymentSettings** | [**\SynergiTech\Sage\Model\PostHostedArtefactPaymentSettings**](../Model/PostHostedArtefactPaymentSettings.md)|  | [optional] |
+| **hostedArtefactPaymentSettings** | [**\SynergiTech\Sage\Model\PostHostedArtefactPaymentSettings**](../Model/PostHostedArtefactPaymentSettings.md)|  | |
 
 ### Return type
 
@@ -278,7 +230,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

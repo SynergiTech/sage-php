@@ -10,7 +10,8 @@ docker run --rm -v "$(pwd):/local" openapitools/openapi-generator-cli generate \
     --git-user-id synergitech \
     --git-repo-id sage-php \
     --global-property apiTests=false,modelTests=false \
-    --output /local
+    --output /local \
+    --skip-validate-spec
 ```
 
 ## Just see the swagger

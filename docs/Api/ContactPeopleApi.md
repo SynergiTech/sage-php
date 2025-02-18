@@ -1,6 +1,6 @@
 # SynergiTech\Sage\ContactPeopleApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Contact Person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactPeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Person Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getContactPersons()`
 
 ```php
-getContactPersons($addressId, $updatedOrCreatedSince, $deletedSince, $contactId, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\ContactPerson[]
+getContactPersons($addressId, $updatedOrCreatedSince, $deletedSince, $contactId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\ContactPerson[]
 ```
 
 Returns all Contact People
@@ -94,34 +83,22 @@ Returns all Contact People
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactPeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $addressId = 'addressId_example'; // string | Use this to filter by address id
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Address Contacts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Address Contacts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Address Contacts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Address Contacts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
 $contactId = 'contactId_example'; // string | Use this to filter by contact id
-$showLegacyId = True; // bool | Display the legacy_id for the Address Contacts.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Address Contacts per request.
-$page = 1; // int | Format - int32. Go to specific page of Address Contacts
+$itemsPerPage = 20; // int | Returns the given number of Address Contacts per request.
+$page = 1; // int | Go to specific page of Address Contacts
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Address Contacts (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getContactPersons($addressId, $updatedOrCreatedSince, $deletedSince, $contactId, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getContactPersons($addressId, $updatedOrCreatedSince, $deletedSince, $contactId, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactPeopleApi->getContactPersons: ', $e->getMessage(), PHP_EOL;
@@ -133,12 +110,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **string**| Use this to filter by address id | [optional] |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Address Contacts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **deletedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Address Contacts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Address Contacts changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **deletedSince** | **\DateTime**| Use this to limit the response to Address Contacts deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
 | **contactId** | **string**| Use this to filter by contact id | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Address Contacts. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Address Contacts per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Address Contacts | [optional] [default to 1] |
+| **itemsPerPage** | **int**| Returns the given number of Address Contacts per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Address Contacts | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Address Contacts (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -147,7 +123,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -161,7 +137,7 @@ try {
 ## `getContactPersonsKey()`
 
 ```php
-getContactPersonsKey($key, $nestedAttributes, $showLegacyId, $attributes): \SynergiTech\Sage\Model\ContactPerson
+getContactPersonsKey($key, $nestedAttributes, $attributes): \SynergiTech\Sage\Model\ContactPerson
 ```
 
 Returns a Contact Person
@@ -175,30 +151,18 @@ Returns a Contact Person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactPeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Person Key.
 $nestedAttributes = 'nestedAttributes_example'; // string | Specify the attributes that you want to expose for nested entities of the Address Contact (expose all nested attributes with 'all'). These are in addition to the base attributes (name, path)
-$showLegacyId = True; // bool | Display the legacy_id for the Address Contact.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Address Contact (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getContactPersonsKey($key, $nestedAttributes, $showLegacyId, $attributes);
+    $result = $apiInstance->getContactPersonsKey($key, $nestedAttributes, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactPeopleApi->getContactPersonsKey: ', $e->getMessage(), PHP_EOL;
@@ -211,7 +175,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Contact Person Key. | |
 | **nestedAttributes** | **string**| Specify the attributes that you want to expose for nested entities of the Address Contact (expose all nested attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Address Contact. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Address Contact (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -220,7 +183,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -234,7 +197,7 @@ try {
 ## `postContactPersons()`
 
 ```php
-postContactPersons($postContactPersons): \SynergiTech\Sage\Model\ContactPerson
+postContactPersons($contactPersons): \SynergiTech\Sage\Model\ContactPerson
 ```
 
 Creates a Contact Person
@@ -248,27 +211,16 @@ Creates a Contact Person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactPeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postContactPersons = new \SynergiTech\Sage\Model\PostContactPersons(); // \SynergiTech\Sage\Model\PostContactPersons
+$contactPersons = new \SynergiTech\Sage\Model\PostContactPersons(); // \SynergiTech\Sage\Model\PostContactPersons
 
 try {
-    $result = $apiInstance->postContactPersons($postContactPersons);
+    $result = $apiInstance->postContactPersons($contactPersons);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactPeopleApi->postContactPersons: ', $e->getMessage(), PHP_EOL;
@@ -279,7 +231,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postContactPersons** | [**\SynergiTech\Sage\Model\PostContactPersons**](../Model/PostContactPersons.md)|  | [optional] |
+| **contactPersons** | [**\SynergiTech\Sage\Model\PostContactPersons**](../Model/PostContactPersons.md)|  | |
 
 ### Return type
 
@@ -287,7 +239,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -301,7 +253,7 @@ try {
 ## `putContactPersonsKey()`
 
 ```php
-putContactPersonsKey($key, $putContactPersons): \SynergiTech\Sage\Model\ContactPerson
+putContactPersonsKey($key, $contactPersons): \SynergiTech\Sage\Model\ContactPerson
 ```
 
 Updates a Contact Person
@@ -315,28 +267,17 @@ Updates a Contact Person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactPeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Person Key.
-$putContactPersons = new \SynergiTech\Sage\Model\PutContactPersons(); // \SynergiTech\Sage\Model\PutContactPersons
+$contactPersons = new \SynergiTech\Sage\Model\PutContactPersons(); // \SynergiTech\Sage\Model\PutContactPersons
 
 try {
-    $result = $apiInstance->putContactPersonsKey($key, $putContactPersons);
+    $result = $apiInstance->putContactPersonsKey($key, $contactPersons);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactPeopleApi->putContactPersonsKey: ', $e->getMessage(), PHP_EOL;
@@ -348,7 +289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Contact Person Key. | |
-| **putContactPersons** | [**\SynergiTech\Sage\Model\PutContactPersons**](../Model/PutContactPersons.md)|  | [optional] |
+| **contactPersons** | [**\SynergiTech\Sage\Model\PutContactPersons**](../Model/PutContactPersons.md)|  | |
 
 ### Return type
 
@@ -356,7 +297,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

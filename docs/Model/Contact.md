@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unique identifier for the item | [optional]
 **displayedAs** | **string** | The name of the resource | [optional]
 **path** | **string** | The API path for the resource | [optional]
@@ -28,6 +27,7 @@ Name | Type | Description | Notes
 **bankAccountDetails** | [**\SynergiTech\Sage\Model\BankAccountDetails**](BankAccountDetails.md) |  | [optional]
 **creditLimit** | **float** | Custom credit limit amount for the contact &lt;br&gt;&lt;i&gt;not applicable to Start&lt;/i&gt; | [optional]
 **creditDays** | **int** | Custom credit days for the contact.&lt;br&gt; If returned as null in a GET response, you may want to GET /invoice_settings and use &#39;customer_credit_days&#39;/&#39;vendor_credit_days&#39; as default/fallback according to your use case. | [optional]
+**creditTerms** | **string** | Credit terms options determine how invoice due dates are calculated. Options include: end of next month, a delay of supplier credit_days and immediately. Only: month_end_invoice, date_from_invoice, immediate_invoice, month_end_payment, date_from_payment, immediate_payment are valid values. If returned as null in a GET response, you may want to GET /invoice_settings and use &#39;customer_credit_terms&#39;/&#39;vendor_credit_terms&#39; as default. | [optional]
 **creditTermsAndConditions** | **string** | Custom terms and conditions for the contact. If set will override global /invoice_settings default terms and conditions. &lt;br&gt;&lt;i&gt;Customers only&lt;/i&gt; | [optional]
 **productSalesPriceType** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **sourceGuid** | **string** | Used when importing contacts from external sources | [optional]
@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **hasUnfinishedRecurringInvoices** | **bool** | Indicates whether the contact is associated with any unfinished recurring invoices | [optional]
 **cisRegistered** | **bool** | Identifies a contact as being registered as CIS.&lt;br&gt;&lt;i&gt;only applicable to UK business&lt;/i&gt; | [optional]
 **niBased** | **bool** | Identifies a contact as being based in Northern Ireland. | [optional]
+**isActive** | **bool** | Identifies a contact as being active | [optional]
 **gbBased** | **bool** | Identifies a contact as being based in Great Britain. | [optional]
 **cisSettings** | [**\SynergiTech\Sage\Model\ContactCisSettings**](ContactCisSettings.md) |  | [optional]
 **destinationVatBlocking** | **bool** | Identifies a contact should be blocked due to destination vat | [optional]

@@ -49,31 +49,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\AddressRegionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$showLegacyId = True; // bool | Display the legacy_id for the States.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of States per request.
-$page = 1; // int | Format - int32. Go to specific page of States
+$itemsPerPage = 20; // int | Returns the given number of States per request.
+$page = 1; // int | Go to specific page of States
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the States (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 $countryId = 'countryId_example'; // string | Use this to filter by country id
 
 try {
-    $result = $apiInstance->getAddressRegions($showLegacyId, $itemsPerPage, $page, $attributes, $countryId);
+    $result = $apiInstance->getAddressRegions($itemsPerPage, $page, $attributes, $countryId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressRegionsApi->getAddressRegions: ', $e->getMessage(), PHP_EOL;
@@ -83,7 +71,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api-qa.sageapim.com/uki/sageone/accounts/v3*
+All URIs are relative to *https://api.accounting.sage.com/v3.1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -96,6 +84,14 @@ Class | Method | HTTP request | Description
 *AddressesApi* | [**getAddressesKey**](docs/Api/AddressesApi.md#getaddresseskey) | **GET** /addresses/{key} | Returns a Address
 *AddressesApi* | [**postAddresses**](docs/Api/AddressesApi.md#postaddresses) | **POST** /addresses | Creates a Address
 *AddressesApi* | [**putAddressesKey**](docs/Api/AddressesApi.md#putaddresseskey) | **PUT** /addresses/{key} | Updates a Address
+*AnalysisTypeCategoriesApi* | [**deleteAnalysisTypeCategoriesKey**](docs/Api/AnalysisTypeCategoriesApi.md#deleteanalysistypecategorieskey) | **DELETE** /analysis_type_categories/{key} | Deletes a Analysis Type Category
+*AnalysisTypeCategoriesApi* | [**getAnalysisTypeCategories**](docs/Api/AnalysisTypeCategoriesApi.md#getanalysistypecategories) | **GET** /analysis_type_categories | Returns all Analysis Type Categories
+*AnalysisTypeCategoriesApi* | [**getAnalysisTypeCategoriesKey**](docs/Api/AnalysisTypeCategoriesApi.md#getanalysistypecategorieskey) | **GET** /analysis_type_categories/{key} | Returns a Analysis Type Category
+*AnalysisTypeCategoriesApi* | [**postAnalysisTypeCategories**](docs/Api/AnalysisTypeCategoriesApi.md#postanalysistypecategories) | **POST** /analysis_type_categories | Creates a Analysis Type Category
+*AnalysisTypeCategoriesApi* | [**putAnalysisTypeCategoriesKey**](docs/Api/AnalysisTypeCategoriesApi.md#putanalysistypecategorieskey) | **PUT** /analysis_type_categories/{key} | Updates a Analysis Type Category
+*AnalysisTypesApi* | [**getAnalysisTypes**](docs/Api/AnalysisTypesApi.md#getanalysistypes) | **GET** /analysis_types | Returns all Analysis Types
+*AnalysisTypesApi* | [**getAnalysisTypesKey**](docs/Api/AnalysisTypesApi.md#getanalysistypeskey) | **GET** /analysis_types/{key} | Returns a Analysis Type
+*AnalysisTypesApi* | [**putAnalysisTypesKey**](docs/Api/AnalysisTypesApi.md#putanalysistypeskey) | **PUT** /analysis_types/{key} | Updates a Analysis Type
 *ArtefactStatusesApi* | [**getArtefactStatuses**](docs/Api/ArtefactStatusesApi.md#getartefactstatuses) | **GET** /artefact_statuses | Returns all Artefact Statuses
 *ArtefactStatusesApi* | [**getArtefactStatusesKey**](docs/Api/ArtefactStatusesApi.md#getartefactstatuseskey) | **GET** /artefact_statuses/{key} | Returns a Artefact Status
 *AttachmentContextTypesApi* | [**getAttachmentContextTypes**](docs/Api/AttachmentContextTypesApi.md#getattachmentcontexttypes) | **GET** /attachment_context_types | Returns all Attachment Context Types
@@ -111,6 +107,7 @@ Class | Method | HTTP request | Description
 *BankAccountsApi* | [**deleteBankAccountsKey**](docs/Api/BankAccountsApi.md#deletebankaccountskey) | **DELETE** /bank_accounts/{key} | Deletes a Bank Account
 *BankAccountsApi* | [**getBankAccounts**](docs/Api/BankAccountsApi.md#getbankaccounts) | **GET** /bank_accounts | Returns all Bank Accounts
 *BankAccountsApi* | [**getBankAccountsKey**](docs/Api/BankAccountsApi.md#getbankaccountskey) | **GET** /bank_accounts/{key} | Returns a Bank Account
+*BankAccountsApi* | [**getBankAccountsKeyBankFeed**](docs/Api/BankAccountsApi.md#getbankaccountskeybankfeed) | **GET** /bank_accounts/{key}/bank_feed | Bank feed endpoint for Banking Cloud Bank accounts
 *BankAccountsApi* | [**postBankAccounts**](docs/Api/BankAccountsApi.md#postbankaccounts) | **POST** /bank_accounts | Creates a Bank Account
 *BankAccountsApi* | [**putBankAccountsKey**](docs/Api/BankAccountsApi.md#putbankaccountskey) | **PUT** /bank_accounts/{key} | Updates a Bank Account
 *BankDepositsApi* | [**deleteBankDepositsKey**](docs/Api/BankDepositsApi.md#deletebankdepositskey) | **DELETE** /bank_deposits/{key} | Deletes a Bank Deposit
@@ -144,6 +141,8 @@ Class | Method | HTTP request | Description
 *BusinessTypesApi* | [**getBusinessTypesKey**](docs/Api/BusinessTypesApi.md#getbusinesstypeskey) | **GET** /business_types/{key} | Returns a Business Type
 *CatalogItemTypesApi* | [**getCatalogItemTypes**](docs/Api/CatalogItemTypesApi.md#getcatalogitemtypes) | **GET** /catalog_item_types | Returns all Catalog Item Types
 *CatalogItemTypesApi* | [**getCatalogItemTypesKey**](docs/Api/CatalogItemTypesApi.md#getcatalogitemtypeskey) | **GET** /catalog_item_types/{key} | Returns a Catalog Item Type
+*CisSettingsApi* | [**getCisSettings**](docs/Api/CisSettingsApi.md#getcissettings) | **GET** /cis_settings | Returns all Cis Settings
+*CisSettingsApi* | [**putCisSettings**](docs/Api/CisSettingsApi.md#putcissettings) | **PUT** /cis_settings | Updates a Cis Settings
 *CoaAccountsApi* | [**getCoaAccounts**](docs/Api/CoaAccountsApi.md#getcoaaccounts) | **GET** /coa_accounts | Returns all Coa Accounts
 *CoaAccountsApi* | [**getCoaAccountsKey**](docs/Api/CoaAccountsApi.md#getcoaaccountskey) | **GET** /coa_accounts/{key} | Returns a Coa Account
 *CoaTemplatesApi* | [**getCoaTemplates**](docs/Api/CoaTemplatesApi.md#getcoatemplates) | **GET** /coa_templates | Returns all Coa Templates
@@ -191,12 +190,12 @@ Class | Method | HTTP request | Description
 *CurrenciesApi* | [**getCurrenciesKey**](docs/Api/CurrenciesApi.md#getcurrencieskey) | **GET** /currencies/{key} | Returns a Currency
 *DatevSettingsApi* | [**getDatevSettings**](docs/Api/DatevSettingsApi.md#getdatevsettings) | **GET** /datev_settings | Returns all Datev Settings
 *DatevSettingsApi* | [**putDatevSettings**](docs/Api/DatevSettingsApi.md#putdatevsettings) | **PUT** /datev_settings | Updates a Datev Settings
+*EUGoodsServicesTypesApi* | [**getEuGoodsServicesTypes**](docs/Api/EUGoodsServicesTypesApi.md#geteugoodsservicestypes) | **GET** /eu_goods_services_types | Returns all EU Goods Services Types
+*EUGoodsServicesTypesApi* | [**getEuGoodsServicesTypesKey**](docs/Api/EUGoodsServicesTypesApi.md#geteugoodsservicestypeskey) | **GET** /eu_goods_services_types/{key} | Returns a EU Goods Services Type
+*EUSalesDescriptionsApi* | [**getEuSalesDescriptions**](docs/Api/EUSalesDescriptionsApi.md#geteusalesdescriptions) | **GET** /eu_sales_descriptions | Returns all EU Sales Descriptions
+*EUSalesDescriptionsApi* | [**getEuSalesDescriptionsKey**](docs/Api/EUSalesDescriptionsApi.md#geteusalesdescriptionskey) | **GET** /eu_sales_descriptions/{key} | Returns a EU Sales Description
 *EmailSettingsApi* | [**getEmailSettings**](docs/Api/EmailSettingsApi.md#getemailsettings) | **GET** /email_settings | Returns all Email Settings
 *EmailSettingsApi* | [**putEmailSettings**](docs/Api/EmailSettingsApi.md#putemailsettings) | **PUT** /email_settings | Updates a Email Settings
-*EuGoodsServicesTypesApi* | [**getEuGoodsServicesTypes**](docs/Api/EuGoodsServicesTypesApi.md#geteugoodsservicestypes) | **GET** /eu_goods_services_types | Returns all EU Goods Services Types
-*EuGoodsServicesTypesApi* | [**getEuGoodsServicesTypesKey**](docs/Api/EuGoodsServicesTypesApi.md#geteugoodsservicestypeskey) | **GET** /eu_goods_services_types/{key} | Returns a EU Goods Services Type
-*EuSalesDescriptionsApi* | [**getEuSalesDescriptions**](docs/Api/EuSalesDescriptionsApi.md#geteusalesdescriptions) | **GET** /eu_sales_descriptions | Returns all EU Sales Descriptions
-*EuSalesDescriptionsApi* | [**getEuSalesDescriptionsKey**](docs/Api/EuSalesDescriptionsApi.md#geteusalesdescriptionskey) | **GET** /eu_sales_descriptions/{key} | Returns a EU Sales Description
 *ExchangeRatesApi* | [**getExchangeRates**](docs/Api/ExchangeRatesApi.md#getexchangerates) | **GET** /exchange_rates | Returns all Exchange Rates
 *ExchangeRatesApi* | [**getExchangeRatesKey**](docs/Api/ExchangeRatesApi.md#getexchangerateskey) | **GET** /exchange_rates/{key} | Returns a Exchange Rate
 *FinancialSettingsApi* | [**getFinancialSettings**](docs/Api/FinancialSettingsApi.md#getfinancialsettings) | **GET** /financial_settings | Returns all Financial Settings
@@ -363,8 +362,6 @@ Class | Method | HTTP request | Description
 *TransactionsApi* | [**getTransactionsKey**](docs/Api/TransactionsApi.md#gettransactionskey) | **GET** /transactions/{key} | Returns a Transaction
 *UnallocatedArtefactsApi* | [**getUnallocatedArtefacts**](docs/Api/UnallocatedArtefactsApi.md#getunallocatedartefacts) | **GET** /unallocated_artefacts | Returns all Unallocated Artefacts
 *UnallocatedArtefactsApi* | [**getUnallocatedArtefactsKey**](docs/Api/UnallocatedArtefactsApi.md#getunallocatedartefactskey) | **GET** /unallocated_artefacts/{key} | Returns a Unallocated Artefact
-*UnpostedTransactionsApi* | [**getUnpostedTransactions**](docs/Api/UnpostedTransactionsApi.md#getunpostedtransactions) | **GET** /unposted_transactions | Returns all Unposted Transactions
-*UnpostedTransactionsApi* | [**getUnpostedTransactionsKey**](docs/Api/UnpostedTransactionsApi.md#getunpostedtransactionskey) | **GET** /unposted_transactions/{key} | Returns a Unposted Transaction
 
 ## Models
 
@@ -372,6 +369,9 @@ Class | Method | HTTP request | Description
 - [AddressRegion](docs/Model/AddressRegion.md)
 - [AllocatedArtefact](docs/Model/AllocatedArtefact.md)
 - [AllocatedPaymentArtefact](docs/Model/AllocatedPaymentArtefact.md)
+- [AnalysisType](docs/Model/AnalysisType.md)
+- [AnalysisTypeCategory](docs/Model/AnalysisTypeCategory.md)
+- [AnalysisTypeLineItem](docs/Model/AnalysisTypeLineItem.md)
 - [ArtefactDetailedTaxAnalysis](docs/Model/ArtefactDetailedTaxAnalysis.md)
 - [ArtefactDetailedTaxAnalysisBreakdown](docs/Model/ArtefactDetailedTaxAnalysisBreakdown.md)
 - [ArtefactTaxAnalysis](docs/Model/ArtefactTaxAnalysis.md)
@@ -390,6 +390,7 @@ Class | Method | HTTP request | Description
 - [BusinessExchangeRate](docs/Model/BusinessExchangeRate.md)
 - [BusinessSettings](docs/Model/BusinessSettings.md)
 - [BusinessType](docs/Model/BusinessType.md)
+- [CisSettings](docs/Model/CisSettings.md)
 - [CoaAccount](docs/Model/CoaAccount.md)
 - [CoaGroupType](docs/Model/CoaGroupType.md)
 - [CoaTemplate](docs/Model/CoaTemplate.md)
@@ -439,6 +440,8 @@ Class | Method | HTTP request | Description
 - [PaymentOnAccount](docs/Model/PaymentOnAccount.md)
 - [PostAddresses](docs/Model/PostAddresses.md)
 - [PostAddressesAddress](docs/Model/PostAddressesAddress.md)
+- [PostAnalysisTypeCategories](docs/Model/PostAnalysisTypeCategories.md)
+- [PostAnalysisTypeCategoriesAnalysisTypeCategory](docs/Model/PostAnalysisTypeCategoriesAnalysisTypeCategory.md)
 - [PostAttachments](docs/Model/PostAttachments.md)
 - [PostAttachmentsAttachment](docs/Model/PostAttachmentsAttachment.md)
 - [PostBankAccounts](docs/Model/PostBankAccounts.md)
@@ -510,6 +513,7 @@ Class | Method | HTTP request | Description
 - [PostPurchaseInvoicesPurchaseInvoiceInvoiceLinesInner](docs/Model/PostPurchaseInvoicesPurchaseInvoiceInvoiceLinesInner.md)
 - [PostPurchaseQuickEntries](docs/Model/PostPurchaseQuickEntries.md)
 - [PostPurchaseQuickEntriesPurchaseQuickEntry](docs/Model/PostPurchaseQuickEntriesPurchaseQuickEntry.md)
+- [PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner](docs/Model/PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner.md)
 - [PostSalesCorrectiveInvoices](docs/Model/PostSalesCorrectiveInvoices.md)
 - [PostSalesCorrectiveInvoicesSalesCorrectiveInvoice](docs/Model/PostSalesCorrectiveInvoicesSalesCorrectiveInvoice.md)
 - [PostSalesCorrectiveInvoicesSalesCorrectiveInvoiceInvoiceLinesInner](docs/Model/PostSalesCorrectiveInvoicesSalesCorrectiveInvoiceInvoiceLinesInner.md)
@@ -553,6 +557,9 @@ Class | Method | HTTP request | Description
 - [PurchaseQuickEntry](docs/Model/PurchaseQuickEntry.md)
 - [PutAddresses](docs/Model/PutAddresses.md)
 - [PutAddressesAddress](docs/Model/PutAddressesAddress.md)
+- [PutAnalysisTypeCategories](docs/Model/PutAnalysisTypeCategories.md)
+- [PutAnalysisTypes](docs/Model/PutAnalysisTypes.md)
+- [PutAnalysisTypesAnalysisType](docs/Model/PutAnalysisTypesAnalysisType.md)
 - [PutAttachments](docs/Model/PutAttachments.md)
 - [PutAttachmentsAttachment](docs/Model/PutAttachmentsAttachment.md)
 - [PutBankAccounts](docs/Model/PutBankAccounts.md)
@@ -569,6 +576,8 @@ Class | Method | HTTP request | Description
 - [PutBusinessSettings](docs/Model/PutBusinessSettings.md)
 - [PutBusinessSettingsBusinessSettings](docs/Model/PutBusinessSettingsBusinessSettings.md)
 - [PutBusinessSettingsBusinessSettingsDefaultLedgerAccounts](docs/Model/PutBusinessSettingsBusinessSettingsDefaultLedgerAccounts.md)
+- [PutCisSettings](docs/Model/PutCisSettings.md)
+- [PutCisSettingsCisSettings](docs/Model/PutCisSettingsCisSettings.md)
 - [PutContactAllocations](docs/Model/PutContactAllocations.md)
 - [PutContactAllocationsContactAllocation](docs/Model/PutContactAllocationsContactAllocation.md)
 - [PutContactOpeningBalances](docs/Model/PutContactOpeningBalances.md)
@@ -675,22 +684,7 @@ Class | Method | HTTP request | Description
 - [UnpostedTransaction](docs/Model/UnpostedTransaction.md)
 
 ## Authorization
-
-### apiKeyHeader
-
-- **Type**: API key
-- **API key parameter name**: Ocp-Apim-Subscription-Key
-- **Location**: HTTP header
-
-
-
-### apiKeyQuery
-
-- **Type**: API key
-- **API key parameter name**: subscription-key
-- **Location**: URL query string
-
-
+All endpoints do not require authorization.
 ## Tests
 
 To run the tests, use:
@@ -708,7 +702,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.0`
+- API version: `3.1`
     - Package version: `2024.09.03`
     - Generator version: `7.12.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`

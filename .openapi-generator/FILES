@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .phplint.yml
 .travis.yml
@@ -8,6 +7,8 @@ composer.json
 docs/Api/AddressRegionsApi.md
 docs/Api/AddressTypesApi.md
 docs/Api/AddressesApi.md
+docs/Api/AnalysisTypeCategoriesApi.md
+docs/Api/AnalysisTypesApi.md
 docs/Api/ArtefactStatusesApi.md
 docs/Api/AttachmentContextTypesApi.md
 docs/Api/AttachmentsApi.md
@@ -22,6 +23,7 @@ docs/Api/BusinessExchangeRatesApi.md
 docs/Api/BusinessSettingsApi.md
 docs/Api/BusinessTypesApi.md
 docs/Api/CatalogItemTypesApi.md
+docs/Api/CisSettingsApi.md
 docs/Api/CoaAccountsApi.md
 docs/Api/CoaTemplatesApi.md
 docs/Api/ContactAllocationsApi.md
@@ -38,9 +40,9 @@ docs/Api/CountryGroupsApi.md
 docs/Api/CountryOfRegistrationsApi.md
 docs/Api/CurrenciesApi.md
 docs/Api/DatevSettingsApi.md
+docs/Api/EUGoodsServicesTypesApi.md
+docs/Api/EUSalesDescriptionsApi.md
 docs/Api/EmailSettingsApi.md
-docs/Api/EuGoodsServicesTypesApi.md
-docs/Api/EuSalesDescriptionsApi.md
 docs/Api/ExchangeRatesApi.md
 docs/Api/FinancialSettingsApi.md
 docs/Api/HostedArtefactPaymentSettingsApi.md
@@ -87,11 +89,13 @@ docs/Api/TaxTypesApi.md
 docs/Api/TransactionTypesApi.md
 docs/Api/TransactionsApi.md
 docs/Api/UnallocatedArtefactsApi.md
-docs/Api/UnpostedTransactionsApi.md
 docs/Model/Address.md
 docs/Model/AddressRegion.md
 docs/Model/AllocatedArtefact.md
 docs/Model/AllocatedPaymentArtefact.md
+docs/Model/AnalysisType.md
+docs/Model/AnalysisTypeCategory.md
+docs/Model/AnalysisTypeLineItem.md
 docs/Model/ArtefactDetailedTaxAnalysis.md
 docs/Model/ArtefactDetailedTaxAnalysisBreakdown.md
 docs/Model/ArtefactTaxAnalysis.md
@@ -110,6 +114,7 @@ docs/Model/BusinessActivityType.md
 docs/Model/BusinessExchangeRate.md
 docs/Model/BusinessSettings.md
 docs/Model/BusinessType.md
+docs/Model/CisSettings.md
 docs/Model/CoaAccount.md
 docs/Model/CoaGroupType.md
 docs/Model/CoaTemplate.md
@@ -159,6 +164,8 @@ docs/Model/PaymentAllocation.md
 docs/Model/PaymentOnAccount.md
 docs/Model/PostAddresses.md
 docs/Model/PostAddressesAddress.md
+docs/Model/PostAnalysisTypeCategories.md
+docs/Model/PostAnalysisTypeCategoriesAnalysisTypeCategory.md
 docs/Model/PostAttachments.md
 docs/Model/PostAttachmentsAttachment.md
 docs/Model/PostBankAccounts.md
@@ -230,6 +237,7 @@ docs/Model/PostPurchaseInvoicesPurchaseInvoice.md
 docs/Model/PostPurchaseInvoicesPurchaseInvoiceInvoiceLinesInner.md
 docs/Model/PostPurchaseQuickEntries.md
 docs/Model/PostPurchaseQuickEntriesPurchaseQuickEntry.md
+docs/Model/PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner.md
 docs/Model/PostSalesCorrectiveInvoices.md
 docs/Model/PostSalesCorrectiveInvoicesSalesCorrectiveInvoice.md
 docs/Model/PostSalesCorrectiveInvoicesSalesCorrectiveInvoiceInvoiceLinesInner.md
@@ -273,6 +281,9 @@ docs/Model/PurchaseInvoiceLineItem.md
 docs/Model/PurchaseQuickEntry.md
 docs/Model/PutAddresses.md
 docs/Model/PutAddressesAddress.md
+docs/Model/PutAnalysisTypeCategories.md
+docs/Model/PutAnalysisTypes.md
+docs/Model/PutAnalysisTypesAnalysisType.md
 docs/Model/PutAttachments.md
 docs/Model/PutAttachmentsAttachment.md
 docs/Model/PutBankAccounts.md
@@ -289,6 +300,8 @@ docs/Model/PutBusinessExchangeRatesBusinessExchangeRate.md
 docs/Model/PutBusinessSettings.md
 docs/Model/PutBusinessSettingsBusinessSettings.md
 docs/Model/PutBusinessSettingsBusinessSettingsDefaultLedgerAccounts.md
+docs/Model/PutCisSettings.md
+docs/Model/PutCisSettingsCisSettings.md
 docs/Model/PutContactAllocations.md
 docs/Model/PutContactAllocationsContactAllocation.md
 docs/Model/PutContactOpeningBalances.md
@@ -398,6 +411,8 @@ phpunit.xml.dist
 src/Api/AddressRegionsApi.php
 src/Api/AddressTypesApi.php
 src/Api/AddressesApi.php
+src/Api/AnalysisTypeCategoriesApi.php
+src/Api/AnalysisTypesApi.php
 src/Api/ArtefactStatusesApi.php
 src/Api/AttachmentContextTypesApi.php
 src/Api/AttachmentsApi.php
@@ -412,6 +427,7 @@ src/Api/BusinessExchangeRatesApi.php
 src/Api/BusinessSettingsApi.php
 src/Api/BusinessTypesApi.php
 src/Api/CatalogItemTypesApi.php
+src/Api/CisSettingsApi.php
 src/Api/CoaAccountsApi.php
 src/Api/CoaTemplatesApi.php
 src/Api/ContactAllocationsApi.php
@@ -428,9 +444,9 @@ src/Api/CountryGroupsApi.php
 src/Api/CountryOfRegistrationsApi.php
 src/Api/CurrenciesApi.php
 src/Api/DatevSettingsApi.php
+src/Api/EUGoodsServicesTypesApi.php
+src/Api/EUSalesDescriptionsApi.php
 src/Api/EmailSettingsApi.php
-src/Api/EuGoodsServicesTypesApi.php
-src/Api/EuSalesDescriptionsApi.php
 src/Api/ExchangeRatesApi.php
 src/Api/FinancialSettingsApi.php
 src/Api/HostedArtefactPaymentSettingsApi.php
@@ -477,7 +493,6 @@ src/Api/TaxTypesApi.php
 src/Api/TransactionTypesApi.php
 src/Api/TransactionsApi.php
 src/Api/UnallocatedArtefactsApi.php
-src/Api/UnpostedTransactionsApi.php
 src/ApiException.php
 src/Configuration.php
 src/HeaderSelector.php
@@ -485,6 +500,9 @@ src/Model/Address.php
 src/Model/AddressRegion.php
 src/Model/AllocatedArtefact.php
 src/Model/AllocatedPaymentArtefact.php
+src/Model/AnalysisType.php
+src/Model/AnalysisTypeCategory.php
+src/Model/AnalysisTypeLineItem.php
 src/Model/ArtefactDetailedTaxAnalysis.php
 src/Model/ArtefactDetailedTaxAnalysisBreakdown.php
 src/Model/ArtefactTaxAnalysis.php
@@ -503,6 +521,7 @@ src/Model/BusinessActivityType.php
 src/Model/BusinessExchangeRate.php
 src/Model/BusinessSettings.php
 src/Model/BusinessType.php
+src/Model/CisSettings.php
 src/Model/CoaAccount.php
 src/Model/CoaGroupType.php
 src/Model/CoaTemplate.php
@@ -553,6 +572,8 @@ src/Model/PaymentAllocation.php
 src/Model/PaymentOnAccount.php
 src/Model/PostAddresses.php
 src/Model/PostAddressesAddress.php
+src/Model/PostAnalysisTypeCategories.php
+src/Model/PostAnalysisTypeCategoriesAnalysisTypeCategory.php
 src/Model/PostAttachments.php
 src/Model/PostAttachmentsAttachment.php
 src/Model/PostBankAccounts.php
@@ -624,6 +645,7 @@ src/Model/PostPurchaseInvoicesPurchaseInvoice.php
 src/Model/PostPurchaseInvoicesPurchaseInvoiceInvoiceLinesInner.php
 src/Model/PostPurchaseQuickEntries.php
 src/Model/PostPurchaseQuickEntriesPurchaseQuickEntry.php
+src/Model/PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner.php
 src/Model/PostSalesCorrectiveInvoices.php
 src/Model/PostSalesCorrectiveInvoicesSalesCorrectiveInvoice.php
 src/Model/PostSalesCorrectiveInvoicesSalesCorrectiveInvoiceInvoiceLinesInner.php
@@ -667,6 +689,9 @@ src/Model/PurchaseInvoiceLineItem.php
 src/Model/PurchaseQuickEntry.php
 src/Model/PutAddresses.php
 src/Model/PutAddressesAddress.php
+src/Model/PutAnalysisTypeCategories.php
+src/Model/PutAnalysisTypes.php
+src/Model/PutAnalysisTypesAnalysisType.php
 src/Model/PutAttachments.php
 src/Model/PutAttachmentsAttachment.php
 src/Model/PutBankAccounts.php
@@ -683,6 +708,8 @@ src/Model/PutBusinessExchangeRatesBusinessExchangeRate.php
 src/Model/PutBusinessSettings.php
 src/Model/PutBusinessSettingsBusinessSettings.php
 src/Model/PutBusinessSettingsBusinessSettingsDefaultLedgerAccounts.php
+src/Model/PutCisSettings.php
+src/Model/PutCisSettingsCisSettings.php
 src/Model/PutContactAllocations.php
 src/Model/PutContactAllocationsContactAllocation.php
 src/Model/PutContactOpeningBalances.php

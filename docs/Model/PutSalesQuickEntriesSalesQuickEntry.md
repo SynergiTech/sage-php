@@ -25,5 +25,6 @@ Name | Type | Description | Notes
 **statusId** | **string** | The ID of the Status. | [optional]
 **taxAddressRegionId** | **string** | The ID of the Tax Address Region. (Canada only) | [optional]
 **tradeOfAsset** | **bool** | Whether the quick entry is marked as trade of asset. | [optional]
+**analysisTypeCategories** | [**\SynergiTech\Sage\Model\PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner[]**](PostPurchaseQuickEntriesPurchaseQuickEntryAnalysisTypeCategoriesInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

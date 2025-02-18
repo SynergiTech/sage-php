@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unique identifier for the item | [optional]
 **displayedAs** | **string** | The name of the resource | [optional]
 **isPurchaseForResale** | **bool** | Identifies whether the line item is for resale. (Ireland Only) | [optional]
+**analysisTypeCategories** | [**\SynergiTech\Sage\Model\AnalysisTypeLineItem[]**](AnalysisTypeLineItem.md) | The analysis types information | [optional]
 **description** | **string** | The description for the invoice line | [optional]
 **product** | [**\SynergiTech\Sage\Model\Product**](Product.md) |  | [optional]
 **service** | [**\SynergiTech\Sage\Model\Service**](Service.md) |  | [optional]

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The tax type id | [optional]
 **displayedAs** | **string** | Display text for the item | [optional]
 **path** | **string** | The API path for the resource | [optional]

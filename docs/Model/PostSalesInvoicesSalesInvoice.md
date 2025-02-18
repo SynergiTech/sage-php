@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contactId** | **string** | The [contact](./#tag/contacts) the sales invoice relates to |
+**contactId** | **string** | The contact the sales invoice relates to |
 **date** | **\DateTime** | The date of the invoice |
 **vatReverseCharge** | **bool** | Indicates whether Domestic Reverser Charge is applied to the artefact. Only used for a UK business. | [optional]
 **destinationConsignment** | **bool** | Indicates whether consignment checkbox for destination VAT is checked on the artefact. Only used for an UK business, where destination VAT was enabled in the settings. | [optional]

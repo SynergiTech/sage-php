@@ -1,6 +1,6 @@
 # SynergiTech\Sage\StockMovementsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Stock Movement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockMovementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Stock Movement Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getStockMovements()`
 
 ```php
-getStockMovements($search, $stockItemId, $fromDate, $toDate, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\StockMovement[]
+getStockMovements($search, $stockItemId, $fromDate, $toDate, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\StockMovement[]
 ```
 
 Returns all Stock Movements
@@ -94,34 +83,22 @@ Returns all Stock Movements
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockMovementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $search = 'search_example'; // string | Use this to filter by the details
 $stockItemId = 'stockItemId_example'; // string | Use this to filter  by stock_item_id
-$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to filter by Stock Movements dates
-$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to filter by Stock Movements dates
-$showLegacyId = True; // bool | Display the legacy_id for the Stock Movements.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Stock Movements per request.
-$page = 1; // int | Format - int32. Go to specific page of Stock Movements
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to filter by Stock Movements dates
+$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to filter by Stock Movements dates
+$itemsPerPage = 20; // int | Returns the given number of Stock Movements per request.
+$page = 1; // int | Go to specific page of Stock Movements
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Stock Movements (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getStockMovements($search, $stockItemId, $fromDate, $toDate, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getStockMovements($search, $stockItemId, $fromDate, $toDate, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockMovementsApi->getStockMovements: ', $e->getMessage(), PHP_EOL;
@@ -134,11 +111,10 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **search** | **string**| Use this to filter by the details | [optional] |
 | **stockItemId** | **string**| Use this to filter  by stock_item_id | [optional] |
-| **fromDate** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to filter by Stock Movements dates | [optional] |
-| **toDate** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to filter by Stock Movements dates | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Stock Movements. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Stock Movements per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Stock Movements | [optional] [default to 1] |
+| **fromDate** | **\DateTime**| Use this to filter by Stock Movements dates | [optional] |
+| **toDate** | **\DateTime**| Use this to filter by Stock Movements dates | [optional] |
+| **itemsPerPage** | **int**| Returns the given number of Stock Movements per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Stock Movements | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Stock Movements (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -147,7 +123,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -161,7 +137,7 @@ try {
 ## `getStockMovementsKey()`
 
 ```php
-getStockMovementsKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\StockMovement
+getStockMovementsKey($key, $attributes): \SynergiTech\Sage\Model\StockMovement
 ```
 
 Returns a Stock Movement
@@ -175,29 +151,17 @@ Returns a Stock Movement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockMovementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Stock Movement Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Stock Movement.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Stock Movement (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getStockMovementsKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getStockMovementsKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockMovementsApi->getStockMovementsKey: ', $e->getMessage(), PHP_EOL;
@@ -209,7 +173,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Stock Movement Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Stock Movement. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Stock Movement (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -218,7 +181,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -232,7 +195,7 @@ try {
 ## `postStockMovements()`
 
 ```php
-postStockMovements($postStockMovements): \SynergiTech\Sage\Model\StockMovement
+postStockMovements($stockMovements): \SynergiTech\Sage\Model\StockMovement
 ```
 
 Creates a Stock Movement
@@ -246,27 +209,16 @@ Creates a Stock Movement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockMovementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postStockMovements = new \SynergiTech\Sage\Model\PostStockMovements(); // \SynergiTech\Sage\Model\PostStockMovements
+$stockMovements = new \SynergiTech\Sage\Model\PostStockMovements(); // \SynergiTech\Sage\Model\PostStockMovements
 
 try {
-    $result = $apiInstance->postStockMovements($postStockMovements);
+    $result = $apiInstance->postStockMovements($stockMovements);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockMovementsApi->postStockMovements: ', $e->getMessage(), PHP_EOL;
@@ -277,7 +229,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postStockMovements** | [**\SynergiTech\Sage\Model\PostStockMovements**](../Model/PostStockMovements.md)|  | [optional] |
+| **stockMovements** | [**\SynergiTech\Sage\Model\PostStockMovements**](../Model/PostStockMovements.md)|  | |
 
 ### Return type
 
@@ -285,7 +237,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -299,7 +251,7 @@ try {
 ## `putStockMovementsKey()`
 
 ```php
-putStockMovementsKey($key, $putStockMovements): \SynergiTech\Sage\Model\StockMovement
+putStockMovementsKey($key, $stockMovements): \SynergiTech\Sage\Model\StockMovement
 ```
 
 Updates a Stock Movement
@@ -313,28 +265,17 @@ Updates a Stock Movement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockMovementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Stock Movement Key.
-$putStockMovements = new \SynergiTech\Sage\Model\PutStockMovements(); // \SynergiTech\Sage\Model\PutStockMovements
+$stockMovements = new \SynergiTech\Sage\Model\PutStockMovements(); // \SynergiTech\Sage\Model\PutStockMovements
 
 try {
-    $result = $apiInstance->putStockMovementsKey($key, $putStockMovements);
+    $result = $apiInstance->putStockMovementsKey($key, $stockMovements);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockMovementsApi->putStockMovementsKey: ', $e->getMessage(), PHP_EOL;
@@ -346,7 +287,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Stock Movement Key. | |
-| **putStockMovements** | [**\SynergiTech\Sage\Model\PutStockMovements**](../Model/PutStockMovements.md)|  | [optional] |
+| **stockMovements** | [**\SynergiTech\Sage\Model\PutStockMovements**](../Model/PutStockMovements.md)|  | |
 
 ### Return type
 
@@ -354,7 +295,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

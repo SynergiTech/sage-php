@@ -1,6 +1,6 @@
 # SynergiTech\Sage\ContactOpeningBalancesApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Contact Opening Balance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactOpeningBalancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Opening Balance Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getContactOpeningBalances()`
 
 ```php
-getContactOpeningBalances($updatedOrCreatedSince, $deletedSince, $contactTypeId, $contactId, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\ContactOpeningBalance[]
+getContactOpeningBalances($updatedOrCreatedSince, $deletedSince, $contactTypeId, $contactId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\ContactOpeningBalance[]
 ```
 
 Returns all Contact Opening Balances
@@ -94,34 +83,22 @@ Returns all Contact Opening Balances
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactOpeningBalancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Batch Entries changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Batch Entries deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Batch Entries changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Batch Entries deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
 $contactTypeId = 'contactTypeId_example'; // string | Use this to filter by contact type id
 $contactId = 'contactId_example'; // string | Use this to filter by contact id
-$showLegacyId = True; // bool | Display the legacy_id for the Batch Entries.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Batch Entries per request.
-$page = 1; // int | Format - int32. Go to specific page of Batch Entries
+$itemsPerPage = 20; // int | Returns the given number of Batch Entries per request.
+$page = 1; // int | Go to specific page of Batch Entries
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Batch Entries (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getContactOpeningBalances($updatedOrCreatedSince, $deletedSince, $contactTypeId, $contactId, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getContactOpeningBalances($updatedOrCreatedSince, $deletedSince, $contactTypeId, $contactId, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactOpeningBalancesApi->getContactOpeningBalances: ', $e->getMessage(), PHP_EOL;
@@ -132,13 +109,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Batch Entries changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **deletedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Batch Entries deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Batch Entries changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **deletedSince** | **\DateTime**| Use this to limit the response to Batch Entries deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
 | **contactTypeId** | **string**| Use this to filter by contact type id | [optional] |
 | **contactId** | **string**| Use this to filter by contact id | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Batch Entries. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Batch Entries per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Batch Entries | [optional] [default to 1] |
+| **itemsPerPage** | **int**| Returns the given number of Batch Entries per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Batch Entries | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Batch Entries (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -147,7 +123,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -161,7 +137,7 @@ try {
 ## `getContactOpeningBalancesKey()`
 
 ```php
-getContactOpeningBalancesKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\ContactOpeningBalance
+getContactOpeningBalancesKey($key, $attributes): \SynergiTech\Sage\Model\ContactOpeningBalance
 ```
 
 Returns a Contact Opening Balance
@@ -175,29 +151,17 @@ Returns a Contact Opening Balance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactOpeningBalancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Opening Balance Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Batch Entry.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Batch Entry (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getContactOpeningBalancesKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getContactOpeningBalancesKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactOpeningBalancesApi->getContactOpeningBalancesKey: ', $e->getMessage(), PHP_EOL;
@@ -209,7 +173,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Contact Opening Balance Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Batch Entry. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Batch Entry (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -218,7 +181,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -232,7 +195,7 @@ try {
 ## `postContactOpeningBalances()`
 
 ```php
-postContactOpeningBalances($postContactOpeningBalances): \SynergiTech\Sage\Model\ContactOpeningBalance
+postContactOpeningBalances($contactOpeningBalances): \SynergiTech\Sage\Model\ContactOpeningBalance
 ```
 
 Creates a Contact Opening Balance
@@ -246,27 +209,16 @@ Creates a Contact Opening Balance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactOpeningBalancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postContactOpeningBalances = new \SynergiTech\Sage\Model\PostContactOpeningBalances(); // \SynergiTech\Sage\Model\PostContactOpeningBalances
+$contactOpeningBalances = new \SynergiTech\Sage\Model\PostContactOpeningBalances(); // \SynergiTech\Sage\Model\PostContactOpeningBalances
 
 try {
-    $result = $apiInstance->postContactOpeningBalances($postContactOpeningBalances);
+    $result = $apiInstance->postContactOpeningBalances($contactOpeningBalances);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactOpeningBalancesApi->postContactOpeningBalances: ', $e->getMessage(), PHP_EOL;
@@ -277,7 +229,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postContactOpeningBalances** | [**\SynergiTech\Sage\Model\PostContactOpeningBalances**](../Model/PostContactOpeningBalances.md)|  | [optional] |
+| **contactOpeningBalances** | [**\SynergiTech\Sage\Model\PostContactOpeningBalances**](../Model/PostContactOpeningBalances.md)|  | |
 
 ### Return type
 
@@ -285,7 +237,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -299,7 +251,7 @@ try {
 ## `putContactOpeningBalancesKey()`
 
 ```php
-putContactOpeningBalancesKey($key, $putContactOpeningBalances): \SynergiTech\Sage\Model\ContactOpeningBalance
+putContactOpeningBalancesKey($key, $contactOpeningBalances): \SynergiTech\Sage\Model\ContactOpeningBalance
 ```
 
 Updates a Contact Opening Balance
@@ -313,28 +265,17 @@ Updates a Contact Opening Balance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\ContactOpeningBalancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Contact Opening Balance Key.
-$putContactOpeningBalances = new \SynergiTech\Sage\Model\PutContactOpeningBalances(); // \SynergiTech\Sage\Model\PutContactOpeningBalances
+$contactOpeningBalances = new \SynergiTech\Sage\Model\PutContactOpeningBalances(); // \SynergiTech\Sage\Model\PutContactOpeningBalances
 
 try {
-    $result = $apiInstance->putContactOpeningBalancesKey($key, $putContactOpeningBalances);
+    $result = $apiInstance->putContactOpeningBalancesKey($key, $contactOpeningBalances);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactOpeningBalancesApi->putContactOpeningBalancesKey: ', $e->getMessage(), PHP_EOL;
@@ -346,7 +287,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Contact Opening Balance Key. | |
-| **putContactOpeningBalances** | [**\SynergiTech\Sage\Model\PutContactOpeningBalances**](../Model/PutContactOpeningBalances.md)|  | [optional] |
+| **contactOpeningBalances** | [**\SynergiTech\Sage\Model\PutContactOpeningBalances**](../Model/PutContactOpeningBalances.md)|  | |
 
 ### Return type
 
@@ -354,7 +295,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

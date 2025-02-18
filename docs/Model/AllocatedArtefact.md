@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unique identifier for the item | [optional]
 **artefact** | [**\SynergiTech\Sage\Model\Generic**](Generic.md) |  | [optional]
 **amount** | **float** | The allocated amount | [optional]

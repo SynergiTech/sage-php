@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **auxiliaryAccountsVisible** | **bool** | Auxiliary Accounts Visible (France &amp; Spain only) | [optional]
 **businessTypeId** | **string** | The ID of the Business Type. | [optional]
 **countryOfRegistrationId** | **string** | The ID of the Country Of Registration. | [optional]
+**wizardComplete** | **bool** | Quick Start Wizard completion | [optional]
 **defaultLedgerAccounts** | [**\SynergiTech\Sage\Model\PutBusinessSettingsBusinessSettingsDefaultLedgerAccounts**](PutBusinessSettingsBusinessSettingsDefaultLedgerAccounts.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
