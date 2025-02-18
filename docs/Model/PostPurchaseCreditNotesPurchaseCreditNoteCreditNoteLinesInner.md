@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **quantity** | **float** | The quantity for the credit note line |
 **unitPrice** | **float** | The unit price for the credit note line |
 **isPurchaseForResale** | **bool** | Identifies whether the line item is for resale. (Ireland Only) | [optional]
+**analysisTypeCategories** | **string[]** | The analysis types information | [optional]
 **productId** | **string** | The ID of the Product. | [optional]
 **serviceId** | **string** | The ID of the Service. | [optional]
 **tradeOfAsset** | **bool** | Whether the line item is marked as trade of asset. | [optional]

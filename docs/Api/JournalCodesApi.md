@@ -1,6 +1,6 @@
 # SynergiTech\Sage\JournalCodesApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Journal Code
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\JournalCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Journal Code Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getJournalCodes()`
 
 ```php
-getJournalCodes($updatedOrCreatedSince, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\JournalCode[]
+getJournalCodes($updatedOrCreatedSince, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\JournalCode[]
 ```
 
 Returns all Journal Codes
@@ -94,31 +83,19 @@ Returns all Journal Codes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\JournalCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Journal Codes changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$showLegacyId = True; // bool | Display the legacy_id for the Journal Codes.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Journal Codes per request.
-$page = 1; // int | Format - int32. Go to specific page of Journal Codes
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Journal Codes changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$itemsPerPage = 20; // int | Returns the given number of Journal Codes per request.
+$page = 1; // int | Go to specific page of Journal Codes
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Journal Codes (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getJournalCodes($updatedOrCreatedSince, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getJournalCodes($updatedOrCreatedSince, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JournalCodesApi->getJournalCodes: ', $e->getMessage(), PHP_EOL;
@@ -129,10 +106,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Journal Codes changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Journal Codes. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Journal Codes per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Journal Codes | [optional] [default to 1] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Journal Codes changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **itemsPerPage** | **int**| Returns the given number of Journal Codes per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Journal Codes | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Journal Codes (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -141,7 +117,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -155,7 +131,7 @@ try {
 ## `getJournalCodesKey()`
 
 ```php
-getJournalCodesKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\JournalCode
+getJournalCodesKey($key, $attributes): \SynergiTech\Sage\Model\JournalCode
 ```
 
 Returns a Journal Code
@@ -169,29 +145,17 @@ Returns a Journal Code
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\JournalCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Journal Code Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Journal Code.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Journal Code (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getJournalCodesKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getJournalCodesKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JournalCodesApi->getJournalCodesKey: ', $e->getMessage(), PHP_EOL;
@@ -203,7 +167,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Journal Code Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Journal Code. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Journal Code (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -212,7 +175,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -226,7 +189,7 @@ try {
 ## `postJournalCodes()`
 
 ```php
-postJournalCodes($postJournalCodes): \SynergiTech\Sage\Model\JournalCode
+postJournalCodes($journalCodes): \SynergiTech\Sage\Model\JournalCode
 ```
 
 Creates a Journal Code
@@ -240,27 +203,16 @@ Creates a Journal Code
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\JournalCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postJournalCodes = new \SynergiTech\Sage\Model\PostJournalCodes(); // \SynergiTech\Sage\Model\PostJournalCodes
+$journalCodes = new \SynergiTech\Sage\Model\PostJournalCodes(); // \SynergiTech\Sage\Model\PostJournalCodes
 
 try {
-    $result = $apiInstance->postJournalCodes($postJournalCodes);
+    $result = $apiInstance->postJournalCodes($journalCodes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JournalCodesApi->postJournalCodes: ', $e->getMessage(), PHP_EOL;
@@ -271,7 +223,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postJournalCodes** | [**\SynergiTech\Sage\Model\PostJournalCodes**](../Model/PostJournalCodes.md)|  | [optional] |
+| **journalCodes** | [**\SynergiTech\Sage\Model\PostJournalCodes**](../Model/PostJournalCodes.md)|  | |
 
 ### Return type
 
@@ -279,7 +231,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -293,7 +245,7 @@ try {
 ## `putJournalCodesKey()`
 
 ```php
-putJournalCodesKey($key, $putJournalCodes): \SynergiTech\Sage\Model\JournalCode
+putJournalCodesKey($key, $journalCodes): \SynergiTech\Sage\Model\JournalCode
 ```
 
 Updates a Journal Code
@@ -307,28 +259,17 @@ Updates a Journal Code
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\JournalCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Journal Code Key.
-$putJournalCodes = new \SynergiTech\Sage\Model\PutJournalCodes(); // \SynergiTech\Sage\Model\PutJournalCodes
+$journalCodes = new \SynergiTech\Sage\Model\PutJournalCodes(); // \SynergiTech\Sage\Model\PutJournalCodes
 
 try {
-    $result = $apiInstance->putJournalCodesKey($key, $putJournalCodes);
+    $result = $apiInstance->putJournalCodesKey($key, $journalCodes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JournalCodesApi->putJournalCodesKey: ', $e->getMessage(), PHP_EOL;
@@ -340,7 +281,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Journal Code Key. | |
-| **putJournalCodes** | [**\SynergiTech\Sage\Model\PutJournalCodes**](../Model/PutJournalCodes.md)|  | [optional] |
+| **journalCodes** | [**\SynergiTech\Sage\Model\PutJournalCodes**](../Model/PutJournalCodes.md)|  | |
 
 ### Return type
 
@@ -348,7 +289,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

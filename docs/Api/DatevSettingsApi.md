@@ -1,6 +1,6 @@
 # SynergiTech\Sage\DatevSettingsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, ex
 ## `getDatevSettings()`
 
 ```php
-getDatevSettings($showLegacyId): \SynergiTech\Sage\Model\DatevSettings
+getDatevSettings(): \SynergiTech\Sage\Model\DatevSettings
 ```
 
 Returns all Datev Settings
@@ -25,27 +25,15 @@ Returns all Datev Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\DatevSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$showLegacyId = True; // bool | Display the legacy_id for the Datev Settings.
 
 try {
-    $result = $apiInstance->getDatevSettings($showLegacyId);
+    $result = $apiInstance->getDatevSettings();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DatevSettingsApi->getDatevSettings: ', $e->getMessage(), PHP_EOL;
@@ -54,9 +42,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **showLegacyId** | **bool**| Display the legacy_id for the Datev Settings. | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -64,7 +50,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -78,7 +64,7 @@ try {
 ## `putDatevSettings()`
 
 ```php
-putDatevSettings($putDatevSettings): \SynergiTech\Sage\Model\DatevSettings
+putDatevSettings($datevSettings): \SynergiTech\Sage\Model\DatevSettings
 ```
 
 Updates a Datev Settings
@@ -92,27 +78,16 @@ Updates a Datev Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\DatevSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$putDatevSettings = new \SynergiTech\Sage\Model\PutDatevSettings(); // \SynergiTech\Sage\Model\PutDatevSettings
+$datevSettings = new \SynergiTech\Sage\Model\PutDatevSettings(); // \SynergiTech\Sage\Model\PutDatevSettings
 
 try {
-    $result = $apiInstance->putDatevSettings($putDatevSettings);
+    $result = $apiInstance->putDatevSettings($datevSettings);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DatevSettingsApi->putDatevSettings: ', $e->getMessage(), PHP_EOL;
@@ -123,7 +98,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **putDatevSettings** | [**\SynergiTech\Sage\Model\PutDatevSettings**](../Model/PutDatevSettings.md)|  | [optional] |
+| **datevSettings** | [**\SynergiTech\Sage\Model\PutDatevSettings**](../Model/PutDatevSettings.md)|  | |
 
 ### Return type
 
@@ -131,7 +106,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

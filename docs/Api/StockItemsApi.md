@@ -1,6 +1,6 @@
 # SynergiTech\Sage\StockItemsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,22 +28,11 @@ Deletes a Stock Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Stock Item Key.
 
@@ -66,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,7 +69,7 @@ void (empty response body)
 ## `getStockItems()`
 
 ```php
-getStockItems($search, $updatedOrCreatedSince, $deletedSince, $active, $outOfStock, $belowReorderLevel, $showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\StockItem[]
+getStockItems($search, $updatedOrCreatedSince, $deletedSince, $active, $outOfStock, $belowReorderLevel, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\StockItem[]
 ```
 
 Returns all Stock Items
@@ -94,36 +83,24 @@ Returns all Stock Items
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $search = 'search_example'; // string | Use this to filter by the item code or description.
-$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Stock Items changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
-$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Format - date-time (as date-time in RFC3339). Use this to limit the response to Stock Items deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
+$updatedOrCreatedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Stock Items changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp.
+$deletedSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Use this to limit the response to Stock Items deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp.
 $active = True; // bool | Use this to only return active or inactive items
 $outOfStock = True; // bool | Use this to filter by the Stock Items that are out of stock
 $belowReorderLevel = True; // bool | Use this to filter by the Stock Items that are below the reorder level
-$showLegacyId = True; // bool | Display the legacy_id for the Stock Items.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Stock Items per request.
-$page = 1; // int | Format - int32. Go to specific page of Stock Items
+$itemsPerPage = 20; // int | Returns the given number of Stock Items per request.
+$page = 1; // int | Go to specific page of Stock Items
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Stock Items (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getStockItems($search, $updatedOrCreatedSince, $deletedSince, $active, $outOfStock, $belowReorderLevel, $showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getStockItems($search, $updatedOrCreatedSince, $deletedSince, $active, $outOfStock, $belowReorderLevel, $itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockItemsApi->getStockItems: ', $e->getMessage(), PHP_EOL;
@@ -135,14 +112,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **search** | **string**| Use this to filter by the item code or description. | [optional] |
-| **updatedOrCreatedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Stock Items changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
-| **deletedSince** | **\DateTime**| Format - date-time (as date-time in RFC3339). Use this to limit the response to Stock Items deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
+| **updatedOrCreatedSince** | **\DateTime**| Use this to limit the response to Stock Items changed since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Inclusive of the passed timestamp. | [optional] |
+| **deletedSince** | **\DateTime**| Use this to limit the response to Stock Items deleted since a given date (format: YYYY-MM-DDT(+|-)hh:mm) or date-time (format: YYYY-MM-DDThh:mm:ss(+|-)hh:mm). Not inclusive of the passed timestamp. | [optional] |
 | **active** | **bool**| Use this to only return active or inactive items | [optional] |
 | **outOfStock** | **bool**| Use this to filter by the Stock Items that are out of stock | [optional] |
 | **belowReorderLevel** | **bool**| Use this to filter by the Stock Items that are below the reorder level | [optional] |
-| **showLegacyId** | **bool**| Display the legacy_id for the Stock Items. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Stock Items per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Stock Items | [optional] [default to 1] |
+| **itemsPerPage** | **int**| Returns the given number of Stock Items per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Stock Items | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Stock Items (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -151,7 +127,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -165,7 +141,7 @@ try {
 ## `getStockItemsKey()`
 
 ```php
-getStockItemsKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\StockItem
+getStockItemsKey($key, $attributes): \SynergiTech\Sage\Model\StockItem
 ```
 
 Returns a Stock Item
@@ -179,29 +155,17 @@ Returns a Stock Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Stock Item Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Stock Item.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Stock Item (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getStockItemsKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getStockItemsKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockItemsApi->getStockItemsKey: ', $e->getMessage(), PHP_EOL;
@@ -213,7 +177,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Stock Item Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Stock Item. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Stock Item (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -222,7 +185,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -236,7 +199,7 @@ try {
 ## `postStockItems()`
 
 ```php
-postStockItems($postStockItems): \SynergiTech\Sage\Model\StockItem
+postStockItems($stockItems): \SynergiTech\Sage\Model\StockItem
 ```
 
 Creates a Stock Item
@@ -250,27 +213,16 @@ Creates a Stock Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$postStockItems = new \SynergiTech\Sage\Model\PostStockItems(); // \SynergiTech\Sage\Model\PostStockItems
+$stockItems = new \SynergiTech\Sage\Model\PostStockItems(); // \SynergiTech\Sage\Model\PostStockItems
 
 try {
-    $result = $apiInstance->postStockItems($postStockItems);
+    $result = $apiInstance->postStockItems($stockItems);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockItemsApi->postStockItems: ', $e->getMessage(), PHP_EOL;
@@ -281,7 +233,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postStockItems** | [**\SynergiTech\Sage\Model\PostStockItems**](../Model/PostStockItems.md)|  | [optional] |
+| **stockItems** | [**\SynergiTech\Sage\Model\PostStockItems**](../Model/PostStockItems.md)|  | |
 
 ### Return type
 
@@ -289,7 +241,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -303,7 +255,7 @@ try {
 ## `putStockItemsKey()`
 
 ```php
-putStockItemsKey($key, $putStockItems): \SynergiTech\Sage\Model\StockItem
+putStockItemsKey($key, $stockItems): \SynergiTech\Sage\Model\StockItem
 ```
 
 Updates a Stock Item
@@ -317,28 +269,17 @@ Updates a Stock Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\StockItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Stock Item Key.
-$putStockItems = new \SynergiTech\Sage\Model\PutStockItems(); // \SynergiTech\Sage\Model\PutStockItems
+$stockItems = new \SynergiTech\Sage\Model\PutStockItems(); // \SynergiTech\Sage\Model\PutStockItems
 
 try {
-    $result = $apiInstance->putStockItemsKey($key, $putStockItems);
+    $result = $apiInstance->putStockItemsKey($key, $stockItems);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StockItemsApi->putStockItemsKey: ', $e->getMessage(), PHP_EOL;
@@ -350,7 +291,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Stock Item Key. | |
-| **putStockItems** | [**\SynergiTech\Sage\Model\PutStockItems**](../Model/PutStockItems.md)|  | [optional] |
+| **stockItems** | [**\SynergiTech\Sage\Model\PutStockItems**](../Model/PutStockItems.md)|  | |
 
 ### Return type
 
@@ -358,7 +299,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

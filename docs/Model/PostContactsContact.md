@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **locale** | **string** | The locale for the contact | [optional]
 **creditLimit** | **float** | Custom credit limit amount for the contact &lt;br&gt;&lt;i&gt;not applicable to Start&lt;/i&gt; | [optional]
 **creditDays** | **int** | Custom credit days for the contact.&lt;br&gt; If returned as null in a GET response, you may want to GET /invoice_settings and use &#39;customer_credit_days&#39;/&#39;vendor_credit_days&#39; as default/fallback according to your use case. | [optional]
+**creditTerms** | **string** | Credit terms options determine how invoice due dates are calculated. Options include: end of next month, a delay of supplier credit_days and immediately. Only: month_end_invoice, date_from_invoice, immediate_invoice, month_end_payment, date_from_payment, immediate_payment are valid values. If returned as null in a GET response, you may want to GET /invoice_settings and use &#39;customer_credit_terms&#39;/&#39;vendor_credit_terms&#39; as default. | [optional]
 **creditTermsAndConditions** | **string** | Custom terms and conditions for the contact. If set will override global /invoice_settings default terms and conditions. &lt;br&gt;&lt;i&gt;Customers only&lt;/i&gt; | [optional]
 **productSalesPriceTypeId** | **string** | The ID of the Product Sales Price Type. | [optional]
 **sourceGuid** | **string** | Used when importing contacts from external sources | [optional]

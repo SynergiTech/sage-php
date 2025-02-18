@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unique identifier for the item | [optional]
 **displayedAs** | **string** | The name of the resource | [optional]
+**analysisTypeCategories** | [**\SynergiTech\Sage\Model\AnalysisTypeLineItem[]**](AnalysisTypeLineItem.md) | The analysis types information | [optional]
 **ledgerAccount** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]
 **details** | **string** | The details of the payment line | [optional]
 **taxRate** | [**\SynergiTech\Sage\Model\Base**](Base.md) |  | [optional]

@@ -1,6 +1,6 @@
 # SynergiTech\Sage\AddressTypesApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, ex
 ## `getAddressTypes()`
 
 ```php
-getAddressTypes($showLegacyId, $itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\Base[]
+getAddressTypes($itemsPerPage, $page, $attributes): \SynergiTech\Sage\Model\Base[]
 ```
 
 Returns all Address Types
@@ -25,30 +25,18 @@ Returns all Address Types
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\AddressTypesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$showLegacyId = True; // bool | Display the legacy_id for the Address Types.
-$itemsPerPage = 20; // int | Format - int32. Returns the given number of Address Types per request.
-$page = 1; // int | Format - int32. Go to specific page of Address Types
+$itemsPerPage = 20; // int | Returns the given number of Address Types per request.
+$page = 1; // int | Go to specific page of Address Types
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Address Types (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getAddressTypes($showLegacyId, $itemsPerPage, $page, $attributes);
+    $result = $apiInstance->getAddressTypes($itemsPerPage, $page, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressTypesApi->getAddressTypes: ', $e->getMessage(), PHP_EOL;
@@ -59,9 +47,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **showLegacyId** | **bool**| Display the legacy_id for the Address Types. | [optional] |
-| **itemsPerPage** | **int**| Format - int32. Returns the given number of Address Types per request. | [optional] [default to 20] |
-| **page** | **int**| Format - int32. Go to specific page of Address Types | [optional] [default to 1] |
+| **itemsPerPage** | **int**| Returns the given number of Address Types per request. | [optional] [default to 20] |
+| **page** | **int**| Go to specific page of Address Types | [optional] [default to 1] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Address Types (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -70,7 +57,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -84,7 +71,7 @@ try {
 ## `getAddressTypesKey()`
 
 ```php
-getAddressTypesKey($key, $showLegacyId, $attributes): \SynergiTech\Sage\Model\Base
+getAddressTypesKey($key, $attributes): \SynergiTech\Sage\Model\Base
 ```
 
 Returns a Address Type
@@ -98,29 +85,17 @@ Returns a Address Type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\AddressTypesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $key = 'key_example'; // string | The Address Type Key.
-$showLegacyId = True; // bool | Display the legacy_id for the Address Type.
 $attributes = 'attributes_example'; // string | Specify the attributes that you want to expose for the Address Type (expose all attributes with 'all'). These are in addition to the base attributes (name, path)
 
 try {
-    $result = $apiInstance->getAddressTypesKey($key, $showLegacyId, $attributes);
+    $result = $apiInstance->getAddressTypesKey($key, $attributes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressTypesApi->getAddressTypesKey: ', $e->getMessage(), PHP_EOL;
@@ -132,7 +107,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **key** | **string**| The Address Type Key. | |
-| **showLegacyId** | **bool**| Display the legacy_id for the Address Type. | [optional] |
 | **attributes** | **string**| Specify the attributes that you want to expose for the Address Type (expose all attributes with &#39;all&#39;). These are in addition to the base attributes (name, path) | [optional] |
 
 ### Return type
@@ -141,7 +115,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

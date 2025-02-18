@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legacyId** | **int** | The legacy ID for the item | [optional]
 **id** | **string** | The unposted transaction id | [optional]
 **displayedAs** | **string** | Display text for the transaction | [optional]
 **path** | **string** | The API path for the resource | [optional]

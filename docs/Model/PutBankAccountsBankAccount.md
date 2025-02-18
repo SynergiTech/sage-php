@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **defaultPaymentMethodId** | **string** | The ID of the Default Payment Method. | [optional]
 **gifiCode** | **int** | The GIFI code of the bank ledger account&#39;  GIFI is short for The General Index of Financial Information and it lets the CRA validate tax information electronically instead of manually. Information from financial statements is categorized under the appropriate 4-digit-long GIFI code and entered on corporate income tax returns. GIFI is needed when filing a T2 income tax return.  _Canada only_ | [optional]
 **isActive** | **bool** | Indicates whether the Bank account is active or inactive. | [optional]
+**currencyId** | **string** | The ID of the Currency. | [optional]
 **bankAccountDetails** | [**\SynergiTech\Sage\Model\PutBankAccountsBankAccountBankAccountDetails**](PutBankAccountsBankAccountBankAccountDetails.md) |  | [optional]
 **mainAddress** | [**\SynergiTech\Sage\Model\PostBankAccountsBankAccountMainAddress**](PostBankAccountsBankAccountMainAddress.md) |  | [optional]
 **mainContactPerson** | [**\SynergiTech\Sage\Model\PostBankAccountsBankAccountMainContactPerson**](PostBankAccountsBankAccountMainContactPerson.md) |  | [optional]

@@ -1,6 +1,6 @@
 # SynergiTech\Sage\MigrationsApi
 
-All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, except if the operation defines another base path.
+All URIs are relative to https://api.accounting.sage.com/v3.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-qa.sageapim.com/uki/sageone/accounts/v3, ex
 ## `getMigrations()`
 
 ```php
-getMigrations($showLegacyId): \SynergiTech\Sage\Model\Migration
+getMigrations(): \SynergiTech\Sage\Model\Migration
 ```
 
 Returns all Migrations
@@ -25,27 +25,15 @@ Returns all Migrations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\MigrationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$showLegacyId = True; // bool | Display the legacy_id for the Migrations.
 
 try {
-    $result = $apiInstance->getMigrations($showLegacyId);
+    $result = $apiInstance->getMigrations();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationsApi->getMigrations: ', $e->getMessage(), PHP_EOL;
@@ -54,9 +42,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **showLegacyId** | **bool**| Display the legacy_id for the Migrations. | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -64,7 +50,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 
@@ -78,7 +64,7 @@ try {
 ## `putMigrations()`
 
 ```php
-putMigrations($putMigrations): \SynergiTech\Sage\Model\Migration
+putMigrations($migrations): \SynergiTech\Sage\Model\Migration
 ```
 
 Updates a Migrations
@@ -92,27 +78,16 @@ Updates a Migrations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: apiKeyQuery
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-// Configure API key authorization: apiKeyHeader
-$config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SynergiTech\Sage\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
 
 $apiInstance = new SynergiTech\Sage\Api\MigrationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$putMigrations = new \SynergiTech\Sage\Model\PutMigrations(); // \SynergiTech\Sage\Model\PutMigrations
+$migrations = new \SynergiTech\Sage\Model\PutMigrations(); // \SynergiTech\Sage\Model\PutMigrations
 
 try {
-    $result = $apiInstance->putMigrations($putMigrations);
+    $result = $apiInstance->putMigrations($migrations);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationsApi->putMigrations: ', $e->getMessage(), PHP_EOL;
@@ -123,7 +98,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **putMigrations** | [**\SynergiTech\Sage\Model\PutMigrations**](../Model/PutMigrations.md)|  | [optional] |
+| **migrations** | [**\SynergiTech\Sage\Model\PutMigrations**](../Model/PutMigrations.md)|  | |
 
 ### Return type
 
@@ -131,7 +106,7 @@ try {
 
 ### Authorization
 
-[apiKeyQuery](../../README.md#apiKeyQuery), [apiKeyHeader](../../README.md#apiKeyHeader)
+No authorization required
 
 ### HTTP request headers
 

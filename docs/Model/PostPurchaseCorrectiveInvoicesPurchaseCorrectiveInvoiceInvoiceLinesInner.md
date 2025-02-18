@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **isPurchaseForResale** | **bool** | Identifies whether the line item is for resale. (Ireland Only) | [optional]
+**analysisTypeCategories** | **string[]** | The analysis types information | [optional]
 **description** | **string** | The description for the invoice line | [optional]
 **productId** | **string** | The ID of the Product. | [optional]
 **serviceId** | **string** | The ID of the Service. | [optional]
